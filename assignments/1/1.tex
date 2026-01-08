@@ -1,0 +1,570 @@
+\documentclass[10pt]{article}
+
+\usepackage{parskip}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+\usepackage[style=apa]{biblatex}
+\addbibresource{sources.bib}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{href-ul}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+ 
+\title{Assignment 1}
+\author{Jakob Sverre Alexandersen\\
+GRA4159 Trends, Cycles \& Signals Extraction}
+\maketitle
+
+\tableofcontents
+\newpage
+
+\section{Exercise 1 - 4 ch. 1 UNAS}
+\begin{enumerate}
+    \item \textbf{Observations and forecasts}: Go to the OECD web site (www.oecd.org), find the most recent issue of the ``Economic Outlook'' and update Table 1.1 at the beginning of this chapter using the most recent figures. Comment on the differences between the new figures and the old. What has happened to bring about the change in the figures? In which direction did the OECD forecasters err?
+
+    Table in question:
+    \begin{center}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{image.png}
+        \end{figure}
+    \end{center}
+
+    \begin{table}[H]
+        \centering
+        \caption{Main macroeconomic variables, Germany, 2020 prices, annual changes in percentage}
+        \label{tab:germany-macro}
+        \begin{tabular}{lrrrrr}
+        \toprule
+         & 2023 & 2024 & 2025 & 2026 & 2027 \\
+        \midrule
+        Private consumption & $-0.5$ & 0.5 & 1.1 & 0.9 & 0.8 \\
+        Gross fixed capital formation & $-1.6$ & $-3.2$ & $-0.5$ & 2.2 & 3.9 \\
+        Gross domestic product & $-0.7$ & $-0.5$ & 0.3 & 1.0 & 1.5 \\
+        Imports & $-1.0$ & $-0.4$ & 3.7 & 2.2 & 2.6 \\
+        Exports & $-0.9$ & $-1.9$ & 0.0 & 1.0 & 2.1 \\
+        Household net saving ratio & 10.4 & 11.2 & 11.2 & 11.1 & 10.8 \\
+        GDP Deflator & 6.7 & 3.1 & 2.8 & 2.1 & 2.3 \\
+        Government net lending (\% of GDP) & $-2.5$ & $-2.7$ & $-2.5$ & $-3.0$ & $-3.7$ \\
+        \bottomrule
+        \end{tabular}
+        \smallskip
+        \newline
+        \footnotesize{Source: OECD Economic Outlook 118 database.}
+        \end{table}
+
+    Comparing the updated figures (2023--2027) to the original Table 1.1 (2010--2014) reveals differences in Germany's macroeconomic performance. Most notably, GDP growth has turned \textbf{negative} in 2023 ($-0.7\%$) and 2024 ($-0.5\%$), contrasting sharply with the positive growth of $3$--$4\%$ seen in the early 2010s recovery period. This reflects the impact of the energy crisis following Russia's invasion of Ukraine, persistent inflation, and weakening global demand for German exports.
+    
+    Inflation is dramatically higher: the GDP deflator reached $6.7\%$ in 2023, compared to just $0.8$--$1.7\%$ in 2010--2014. This surge was driven by energy price shocks and supply chain disruptions. Investment (gross fixed capital formation) contracted severely ($-1.6\%$ in 2023, $-3.2\%$ in 2024), whereas it grew $5$--$10\%$ annually during the post-financial crisis recovery. High interest rates and economic uncertainty have deterred capital spending.
+    
+    The government fiscal position has deteriorated: net lending turned from near-balance ($0.0\%$ in 2014) to deficits of $-2.5\%$ to $-3.7\%$ of GDP, reflecting stimulus measures and lower tax revenues. Meanwhile, the household saving ratio increased from around $10\%$ to over $11\%$, indicating precautionary saving amid uncertainty.
+    
+    Regarding forecast errors: OECD projections in 2014 were relatively optimistic about Germany's growth trajectory. The forecasters did not anticipate the structural challenges that would emerge. The energy transition costs, demographic pressures, and geopolitical shocks that have since materialized. The OECD erred on the optimistic side, overestimating Germany's medium-term growth potential.
+
+    \item \textbf{A simple calculation of GDP}: Consider four firms: firm A, a mining enterprise, extracts iron ore; firm B, a steelmaker, uses iron to make steel sheets and ingots; firm C, a carmaker, makes automobiles using steel; firm D, a manufacturer of machinery and robots, also uses steel. Calculate the production, intermediate consumption and values added in millions of euros based on the following assumptions. 
+    
+    Firm A extracts 50 000 tonnes of ore, at 200 euros per tonne, its purchases during the period limited to the purchase of one machine made by firm D, costing 10 million euros. Firm B produces 15 000 tonnes of steel sheet at 3000 euros per tonne, having bought and used all the ore produced by firm A. Firm C has manufactured 5000 vehicles and sold them all to households for 15 000 euros each, having purchased 20 million euros' worth of steel sheet from firm B, but using only 18 million euros' worth in the manufacture of its cars. In addition, Firm C imported 5000 engines from a foreign subsidiary, each being valued at 4000 euros, and purchased domestically 2 robots made by firm D. Firm D sold one machine for 10 million euros and two robots, each worth 5 million euros, having used 10 million euros' worth of steel sheet from firm B. 
+    
+    Calculate the GDP of this economy. Calculate also the final demand of this economy, assuming that it has no exports. Verify that GDP is equal to final demand. (Remember that purchases of machinery are not intermediate consumption, but GFCF).
+
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            \textbf{Firm} & \textbf{Activity} & \textbf{Output} & \textbf{Purchases}\\\hline
+            A & Mining & 50k $\times $ 200 EUR = 10M EUR & 1 machine from D = 10M EUR (GFCF)\\\hline 
+            B & Steelmaker & 15k $\times $ 3k EUR = 45M EUR & All ore from A = 10M EUR\\\hline 
+            C & Carmaker & 5k $\times$ 15k EUR = 75M EUR &
+            20M EUR steel (uses 18M)\\
+            & & & 5k engines imported @ 4k EUR = 2M EUR\\
+            & & & 2 robots from D = 10M EUR (GFCF)\\\hline 
+            D & Machinery & 1 machine + 2 robots = 20M EUR & 10M EUR steel from B\\\hline
+        \end{tabular}
+    \end{center}
+    
+    \textbf{Output Approach}
+
+    \begin{gather*}
+        Y = \text{value added} = \text{output} - \text{intermediate consumption}
+    \end{gather*}
+
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|}
+            \hline 
+            \textbf{Firm} & \textbf{Output} & \textbf{Intermediate Consumption} & \textbf{Value Added}\\\hline 
+            A & 10M EUR & 0 EUR & 10M EUR \\\hline 
+            B & 45M EUR & 10M EUR (ore) & 35M EUR \\\hline 
+            C & 75M EUR & 18M EUR (steel used) + 20M EUR (engines) = 38M EUR & 37M EUR \\\hline 
+            D & 20M EUR & 10M EUR (steel) & 10M EUR \\\hline 
+        \end{tabular}
+    \end{center}
+    \begin{gather*}
+        \boxed{\text{GDP} = 10 + 35 + 37 + 10 = 92 \text{M EUR}}
+    \end{gather*}
+    \newpage
+    \textbf{Final Demand Approach}
+
+    \begin{gather*}
+        \text{GDP} = C + I + G + X + \text{changes in inventories}
+    \end{gather*}
+    Where: 
+    \begin{itemize}
+        \item $C $ = consumption = 75M EUR (households buying cars)
+        \item $I $ = GFCF = 20M EUR (machine + robots)
+        \item $G $ = gov't spending = 0 EUR 
+        \item $X $ = net exports = exports - imports = $0 - 20 $ = -20M EUR
+        \item Changes in inventories = 17M EUR (15M EUR unsold steel at B + 2M EUR unused steel at C)
+    \end{itemize}
+    \begin{gather*}
+        Y = 75 + 20 + 0 + -20 + 17\\
+        \boxed{Y = 92 \text{M EUR}}
+    \end{gather*}
+
+    \textbf{Verification}
+    \begin{gather*}
+        \text{Value added} = \text{Final Demand}\\
+        92 \text{M EUR} = 92 \text{M EUR}\quad\checkmark
+    \end{gather*}
+    \item \textbf{Relationship between current prices, volume and deflator}: The table below shows the series for GDP growth at current prices and the GDP deflator growth rate in the case of France. GDP at current prices in 2005 was equal to 1,718,047 million euros. Calculate the series for GDP in volume in millions of ``2005 euros''. Show how to calculate the series for GDP in volume directly from the growth rates, without using absolute amounts and without using division. Comment.
+    \begin{center}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{image3.png}
+        \end{figure}
+    \end{center}
+
+    The fundamental identity is 
+    \begin{gather*}
+        \text{GDP (nominal)} = (1 + g_{\text{real}})\times (1 + g_{\text{deflator}})
+    \end{gather*}
+    Taking growth rates: 
+    \begin{gather*}
+        1 + g_{\text{nominal}} = (1 + g_{\text{real}})\times (1 + g_{\text{deflator}})
+    \end{gather*}
+    \newpage
+    \textbf{Calculating GDP in Volume}:
+
+    Calculate nominal GDP for each year
+    \begin{gather*}
+        \text{GDP (nom) 2006} = 1,718,047 \times 1.0247 = 1760482.761\\
+        \text{GDP (nom) 2007} = 1,760,482 \times 1.0229 = 1800797.816\\
+        \text{GDP (nom) 2008} = 1,800,797 \times 0.9992 = 1799357.178\\
+        \text{GDP (nom) 2009} = 1,799,356 \times 0.9685 = 1742677.427
+    \end{gather*}
+    Calculate price index (2005 = 1.00)
+    \begin{gather*}
+        P_{2006} = 1 \times 1.0214 = 1.0214\\
+        P_{2007} = 1.0214 \times 1.0259 = 1.0478\\
+        P_{2008} = 1.0478 \times 1.0254 = 1.0744\\
+        P_{2009} = 1.0744 \times 1.0072 = 1.0822
+    \end{gather*}
+    Calculate real GDP = nominal GDP / price index:
+    \begin{center}
+        \begin{tabular}{|c|c|}
+            \hline 
+            \textbf{Year} & \textbf{GDP Volume}\\\hline 
+            2005 &  1,718,047  \\\hline 
+            2006 &  1,723,597 \\\hline 
+            2007 &  1,718,557 \\\hline 
+            2008 &  1,674,646 \\\hline 
+            2009 &  1,610,301 \\\hline 
+        \end{tabular}
+    \end{center}
+    
+    \textbf{Calculating GDP in Volume without using division}:
+
+    For small growth rates, we can use the approximation:
+    \begin{gather*}
+        g_{\text{real}}\approx g_{\text{nominal}} - g_{\text{deflator}}
+    \end{gather*} 
+    This works because for small rates:
+    \begin{gather*}
+        (1 + g_n) = (1 + g_r)(1 + g_d)\approx 1 + g_r + g_d\quad\text{(ignoring the $g_r\times g_d $ term)}
+    \end{gather*}
+    \textbf{Calculate real GDP growth rates:}
+    \begin{center}
+        \begin{tabular}{|c|c|c|c|}
+            \hline 
+            \textbf{Year} & $g_{\text{nominal}}$ & $g_{\text{deflator}}$ & $g_{\text{real}} \approx g_n - g_d$\\\hline 
+            2006 & 2.47\% & 2.14\% & 0.33\%\\\hline 
+            2007 & 2.29\% & 2.59\% & -0.30\%\\\hline 
+            2008 & -0.08\% & 2.54\% & -2.62\%\\\hline 
+            2009 & -3.15\% & 0.72\% & -3.87\%\\\hline
+        \end{tabular}
+    \end{center}
+    Thus,
+    \begin{center}
+        \begin{tabular}{|c|c|}
+            \hline 
+            \textbf{Year} & \textbf{GDP}\\\hline 
+            2005 & 1,718,047\\\hline 
+            2006 & 1,723,716\\\hline 
+            2007 & 1,718,545\\\hline 
+            2008 & 1,673,519\\\hline 
+            2009 & 1,608,754\\\hline 
+        \end{tabular}
+    \end{center}
+    Based on the numbers, we see that the approximation works well for small growth rates. The error from ignoring $g_r\times g_d $ is negligible. France's real GDP was essentially stagnant in '06 and '07 and then contracted sharply in '08 and '09 (GFC). The positive nominal GDP growth in '06 - '07 was almost entirely due to inflation (the deflator), not real output growth. The practical advantage of the subtraction method is that it allows quick mental calculations and doesn't require computing price indices or performing divisions, this is useful for quick analysis and avoiding rounding errors in long calculations. 
+    \newpage 
+    \item \textbf{Calculation of contributions to growth}: The following table shows the French quarterly national accounts for Q2 2013, in volume, chained at the previous year’s prices (base year 2005). Using the box earlier in the text, calculate, to two decimal places, the breakdown of growth in Q2 2013 into the contributions of domestic demand excluding inventories, changes in inventories, and net exports. Comment on your results.
+
+    Warning: In order to simplify the exercise, changes in inventories have been calculated, for the purposes of this exercise, as the balancing item of the equation. This circumvents the difficulty raised by the chain-linking process (see Chapter 2 for chain-linked national accounts).
+
+    \begin{center}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.8\linewidth]{image2.png}
+        \end{figure}
+    \end{center}
+
+    \textbf{Contributions to Growth Formula}:
+    
+    From the national accounts identity, the contribution of each component to GDP growth is:
+    \begin{gather*}
+        \frac{\Delta Y_t}{Y_{t-1}} = \frac{\Delta \text{(Domestic Demand excl. inv.)}}{Y_{t-1}} + \frac{\Delta \text{(Inventories)}}{Y_{t-1}} + \frac{\Delta \text{(Net Exports)}}{Y_{t-1}}
+    \end{gather*}
+
+    \textbf{Calculate GDP Growth Rate}
+    \begin{gather*}
+        \Delta Y = Y_{Q2} - Y_{Q1} = 453,197 - 450,858 = 2,339\\
+        g_Y = \frac{\Delta Y}{Y_{Q1}} = \frac{2,339}{450,858} = 0.0052 = \boxed{0.52\%}
+    \end{gather*}
+
+    \textbf{Contribution from Domestic Demand (excl. inventories)}
+    \begin{gather*}
+        \Delta DD = 459,839 - 458,369 = 1,470\\
+        \text{Contribution} = \frac{1,470}{450,858} = 0.0033 = \boxed{0.33\%}
+    \end{gather*}
+
+    \textbf{Contribution from Changes in Inventories}
+    \begin{gather*}
+        \Delta \text{Inv} = (-274) - (-958) = 684
+        \text{Contribution} = \frac{684}{450,858} = 0.0015 = \boxed{0.15\%}
+    \end{gather*}
+
+    \textbf{Contribution from Net Exports}
+    \begin{gather*}
+        \Delta NX = (-6,368) - (-6,553) = 185\\
+        \text{Contribution} = \frac{185}{450,858} = 0.0004 = \boxed{0.04\%}
+    \end{gather*}
+
+    \textbf{Verification}
+    \begin{gather*}
+        0.33\% + 0.15\% + 0.04\% = 0.52\% = g_Y
+    \end{gather*}
+    \newpage 
+    \textbf{Summary Table}
+    \begin{center}
+        \begin{tabular}{|l|c|}
+            \hline 
+            \textbf{Component} & \textbf{Contribution to Growth}\\\hline 
+            Domestic demand (excl. inventories) & $+0.33\%$ \\\hline 
+            Changes in inventories & $+0.15\%$ \\\hline 
+            Net exports & $+0.04\%$ \\\hline 
+            \textbf{GDP Growth} & $\mathbf{+0.52\%}$ \\\hline 
+        \end{tabular}
+    \end{center}
+
+    The French economy grew by 0.52\% in Q2 2013, a modest but positive quarter. Domestic demand was the main driver, contributing 0.33 percentage points (about 63\% of total growth). This suggests that household consumption, investment, and government spending were the primary sources of economic expansion.
+
+    Inventory rebuilding contributed 0.15 percentage points. The change in inventories improved from $-958$ to $-274$, meaning firms reduced the pace of destocking. This is typical in early recovery phases. Net exports made a small positive contribution of 0.04 percentage points. Although France remained a net importer ($NX < 0$), the trade deficit narrowed slightly as exports grew faster than imports.
+\end{enumerate}
+\newpage
+\section{Consultant simulator}
+You have started in a consultancy firm. One of your customers is the government. The party
+in power is concerned about the country's growth performance and wants to learn more
+about the determinants of long-run growth.
+
+Read the World Bank research report ``Leveraging Growth Regressions for Country Analysis''
+
+Next: 
+\begin{enumerate}[label=(\alph*)]
+    \item Write half-a-page clarifying the relationship between growth regressions, as defined in
+    the World Bank report, and the trend-cycle decompositions covered in this course.
+    Clarify, in particular:
+    \begin{enumerate}[label=\roman*.]
+        \item Overall similarity and differences between the two approaches
+        \item Whether such regressions and/or trend-cycle decompositions are causal
+    \end{enumerate}
+
+    Growth regressions and trend-cycle decompositions both aim to understand patterns in economic output, but they approach this task from fundamentally different angles and answer distinct questions. 
+
+    Growth regressions, as defined in the World Bank report, use cross-country panel data to identify correlations between GDP growth and policy-relevant variables such as infrastructure, inflation, trade openness, and human capital. By working with non-overlapping 5-year averages, these regressions smooth out short-term fluctuations to focus on structural, long-run relationships. The goal is to describe \textit{what changes in macroeconomic variables countries typically experience} during their growth process, essentially asking ``what factors are associated with higher growth across countries?''
+
+    Trend-cycle decompositions, by contrast, apply filtering techniques (such as the Hodrick-Prescott filter) to a single country's GDP time series. These methods mechanically separate the data into a smooth trend component, which is interpreted as potential output or long-run growth, and a residual cyclical component representing temporary deviations. The question here is purely descriptive: ``how does output evolve relative to its trend over time?''
+
+    The key relationship between these approaches is that both attempt to distinguish persistent, structural aspects of growth from temporary fluctuations. Growth regressions do so by averaging over time, while filters do so by smoothing within a time series. However, growth regressions link growth to observable covariates and offer partial correlations that can inform policy discussions, whereas trend-cycle decompositions provide no information about underlying drivers whatsoever. 
+
+    Importantly, neither method establishes causality. Growth regressions suffer from endogeneity problems, which entails omitted variables, reverse causality and measurement error, which means that we cannot determine, for instance, whether infrastructure causes growth or higher income causes better infrastructure. Trend-cycle decompositions have even less causal content; they are purely statistical procedures with no economic identification stategy. Thus, both tools are descriptive: one characterizes cross-country correlates of growth, and the other characterizes within-country output dynamics. 
+    \item Do your best to reproduce Table 2 (page 14) in the report. For your convenience a .csv
+    file containing the necessary data can be found on Itslearning. Comment on any
+    discrepancies between what you find and what's in the report
+    \newpage 
+    \begin{table}[H]
+        \centering
+        \caption{Main Regression Results (reproduced)}
+        \begin{tabular}{lccc}
+        \hline
+         & (1) & (2) & (3) \\
+        VARIABLES & small model & medium model & large model \\
+        \hline
+         &  &  &  \\
+        lagdependent & 0.798*** & 0.802*** & 0.738*** \\
+         & (0.0241) & (0.0284) & (0.0359) \\
+        linflation\_na & -0.228*** & -0.109* & -0.130*** \\
+         & (0.0424) & (0.0599) & (0.0327) \\
+        lrer & 0.00298 & 0.00523** & 0.0121*** \\
+         & (0.00273) & (0.00243) & (0.00305) \\
+        ltraderesid & 0.0819*** & 0.121*** & 0.117*** \\
+         & (0.0261) & (0.0453) & (0.0320) \\
+        infra\_index & 0.0819*** & 0.0723*** & 0.101*** \\
+         & (0.0159) & (0.0207) & (0.0204) \\
+        dum\_fincrisis & -0.0467*** & -0.0373*** & -0.0257*** \\
+         & (0.00894) & (0.0103) & (0.00833) \\
+        sd\_temperature & -0.0235 & -0.0472* & -0.0334 \\
+         & (0.0198) & (0.0265) & (0.0263) \\
+        dltot & -0.0256 & -0.0447 & -0.0443 \\
+         & (0.0398) & (0.0444) & (0.0445) \\
+        lkg & -0.0469** & -0.00898 & 0.0279 \\
+         & (0.0184) & (0.0206) & (0.0212) \\
+        sd\_growth & -0.622*** & -0.156 & -0.260 \\
+         & (0.236) & (0.256) & (0.279) \\
+        durbanpop & 0.0104*** & 0.0102* & -0.00789 \\
+         & (0.00395) & (0.00551) & (0.00535) \\
+        lcredit &  & 0.0151 & 0.0158 \\
+         &  & (0.00988) & (0.0146) \\
+        lFDIstock\_ipol &  & 0.0133** & 0.0120 \\
+         &  & (0.00621) & (0.0123) \\
+        lEDI\_ipol &  & -0.269* & -0.300** \\
+         &  & (0.154) & (0.149) \\
+        lEDI\_ipol\_sq &  & 0.127* & 0.138** \\
+         &  & (0.0665) & (0.0651) \\
+        actotal &  & -0.0137** & -0.0186*** \\
+         &  & (0.00668) & (0.00447) \\
+        lhc &  &  & 0.149 \\
+         &  &  & (0.0910) \\
+        dgini &  &  & -0.0109** \\
+         &  &  & (0.00530) \\
+        Constant & 1.922*** & 2.033*** & 2.632*** \\
+         & (0.202) & (0.252) & (0.308) \\
+         &  &  &  \\
+        \hline
+        Observations & 1,507 & 967 & 635 \\
+        R-squared (within) & 0.897 & 0.894 & 0.923 \\
+        No. countries & 168 & 149 & 128 \\
+        Estimation & FE & FE & FE \\
+        Period FEs & Yes & Yes & Yes \\
+        \hline
+        \multicolumn{4}{l}{\footnotesize Cluster robust standard errors in parentheses,} \\
+        \multicolumn{4}{l}{\footnotesize *** p$<$0.01, ** p$<$0.05, * p$<$0.1} \\
+        \end{tabular}
+        \end{table}
+        \newpage 
+        This table was made using the \verb|analysis.ipynb| notebook. In terms of differences, all coefficient differences are in the third and fourth decimal place ($<0.002$ in absolute terms). This represents less than 1\% deviation for most coefficients. Such differences are negligible for economic interpretation and not not affect any substantive conclusions. Most importantly, all significance levels match exactly. The same variables are significant at the same levels, there are no coefficient changes sign, and standard errors are virtually identical. For example, \verb|lrer| is insignificant in the small model and significant at the 5\% level in the medium model in both my replication and the original. The pattern holds throughout. 
+        \item Extend the analysis conducted above by using a regularized regression technique (instead
+        of OLS). Discuss your choice of method, make an argument for why
+        this approach might be useful in the current context, and comment on the results. How
+        does it differ from what you found in c) 
+        
+        (note from student: it (should) say task c in the task description, but in this paper it pertains to task b because of the way I have formatted it.)
+
+        Ridge regression (L2 regularization) was chosen because it adds the penalty term $\lambda\Sigma\beta^2 $ to the OLS objective function, shrinking coefficients towards zero. Unlike Lasso, it doesn't force coefficients to \textit{exactly} zero, and this is appropriate here since all variables have theoretical justification from the growth literature. It also handles multicollinearity well, which is a concern when growth correlates like infrastructure, human capital, and financial development are correlated. 
+
+        The growth regression literature has long grappled with model uncertainty. The paper itself acknowledges that ``least-square estimation will provide partial correlations, not causal effects'' \parencite[p. 6]{wacker2024leveraging}. With 18 variables in the large model and limited within-country variation, there is a risk of overfitting noise rather than identiying genuine relationships. Regularization addresses this by introducing a bias-variance tradeoff: we accept slightly biased coefficient estimates in exchange for lower variance and more stable predictions. Additionally, regularization provides a useful robustness check -- if OLS results are driven by overfitting or multicollinearity, we weould expect Ridge coefficients to differ substantially or for the relative importance of variables to change. 
+
+        \newpage 
+
+        \begin{table}[htbp]
+            \centering
+            \caption{Ridge Regression Results and Comparison with OLS}
+            \label{tab:ridge_comparison}
+            \small
+            \begin{tabular}{@{}p{0.48\textwidth}@{\hspace{0.04\textwidth}}p{0.48\textwidth}@{}}
+            
+            % LEFT TABLE: Ridge Results
+            \begin{minipage}[t]{\linewidth}
+            \centering
+            \textbf{Panel A: Ridge Regression Coefficients}
+            \vspace{0.5em}
+            
+            \begin{tabular}{lccc}
+            \hline\hline
+             & \multicolumn{3}{c}{Standardized Coefficients} \\
+            \cmidrule(lr){2-4}
+            Variable & Small & Medium & Large \\
+            \hline
+            lagdependent   &  0.282 &  0.246 &  0.189 \\
+            linflation\_na & $-$0.027 & $-$0.012 & $-$0.013 \\
+            lrer           &  0.007 &  0.012 &  0.027 \\
+            ltraderesid    &  0.023 &  0.025 &  0.017 \\
+            infra\_index   &  0.045 &  0.044 &  0.039 \\
+            dum\_fincrisis & $-$0.018 & $-$0.015 & $-$0.009 \\
+            sd\_temperature& $-$0.004 & $-$0.007 & $-$0.005 \\
+            dltot          & $-$0.003 & $-$0.005 & $-$0.004 \\
+            lkg            & $-$0.014 & $-$0.003 &  0.007 \\
+            sd\_growth     & $-$0.021 & $-$0.005 & $-$0.007 \\
+            durbanpop      &  0.014 &  0.011 & $-$0.007 \\
+            lcredit        &        &  0.009 &  0.008 \\
+            lFDIstock\_ipol&        &  0.014 &  0.010 \\
+            lEDI\_ipol     &        & $-$0.021 & $-$0.018 \\
+            lEDI\_ipol\_sq &        &  0.026 &  0.019 \\
+            actotal        &        & $-$0.013 & $-$0.017 \\
+            lhc            &        &        &  0.020 \\
+            dgini          &        &        & $-$0.010 \\
+            \hline
+            Optimal $\alpha$ & 1.76 & 1.21 & 11.51 \\
+            $R^2$          & 0.897 & 0.893 & 0.922 \\
+            \hline\hline
+            \end{tabular}
+            \end{minipage}
+            
+            &
+            
+            % RIGHT TABLE: Comparison
+            \begin{minipage}[t]{\linewidth}
+            \centering
+            \textbf{Panel B: Shrinkage from OLS to Ridge}
+            \vspace{0.5em}
+            
+            \begin{tabular}{lccc}
+            \hline\hline
+             & \multicolumn{3}{c}{Shrinkage (\%)} \\
+            \cmidrule(lr){2-4}
+            Variable & Small & Medium & Large \\
+            \hline
+            lagdependent   & 65.5 & 69.5 & 75.0 \\
+            linflation\_na & 65.3 & 68.2 & 74.1 \\
+            lrer           & 65.1 & 71.5 & 74.2 \\
+            ltraderesid    & 65.4 & 70.0 & 73.0 \\
+            infra\_index   & 65.2 & 65.2 & 74.4 \\
+            dum\_fincrisis & 65.3 & 68.6 & 74.8 \\
+            sd\_temperature& 65.4 & 70.0 & 71.2 \\
+            dltot          & 65.2 & 68.3 & 77.5 \\
+            lkg            & 65.4 & 64.7 & 76.0 \\
+            sd\_growth     & 65.5 & 68.3 & 75.7 \\
+            durbanpop      & 65.6 & 71.4 & 73.0 \\
+            lcredit        &      & 67.7 & 68.3 \\
+            lFDIstock\_ipol&      & 66.8 & 66.0 \\
+            lEDI\_ipol     &      & 75.0 & \textbf{82.5} \\
+            lEDI\_ipol\_sq &      & 73.9 & \textbf{82.4} \\
+            actotal        &      & 69.4 & 75.0 \\
+            lhc            &      &      & 68.8 \\
+            dgini          &      &      & 74.2 \\
+            \hline
+            Mean shrinkage & 65.4 & 69.3 & 74.5 \\
+            \hline\hline
+            \end{tabular}
+            \end{minipage}
+            
+            \\
+            \end{tabular}
+            
+            \vspace{1em}
+            \footnotesize
+            \textit{Notes:} Panel A reports standardized Ridge coefficients (cross-validated $\alpha$). Panel B shows percentage shrinkage: $100 \times (1 - |\beta_{\text{Ridge}}|/|\beta_{\text{OLS}}|)$. Bold indicates shrinkage $>80\%$.
+            
+            \end{table}
+
+            The Ridge results in Table 3A are reassuring for the original OLS findings. Three key patterns emerge: 
+
+            First, all coefficients signs are preserved under Ridge regression, confirming that the direction of relationships identified in Table 2 is robust to regularization. infrastructure, trade openness, and human capital remain positively associated with income, while inflation, financial crises, and political violence remain negatively associated. 
+
+            Second, the $R^2 $ is cirtually unchanged (0.922 vs 0.923 for the large model), suggesting that OLS was not severely overfitting. If the original model had been capturing noise, we would expect a meaningful improvement in Ridge's cross-validated fit relative to in-sample OLS performance. 
+
+            Third, the shrinkage is remarkably uniform across variables ($\sim 65-75\% $), indicating that Ridge penalizes all coefficients proportionally rather than selectively. This suggests there is no single variable driving results through multicollinearity. However, the export diversification terms (lEDI\_ipol and lEDI\_ipol\_sq) experience the highest shrinkage ($ >82\% $), consistent with their large standard errors in OLS and suggesting these estimates may be less reliable. 
+
+            The key difference from OLS is that Ridge confirms which findings are robust: variables that were strongly significant in OLS, such as infrastructure ($\beta_{\text{std}} = 0.039 $), the lagged dependent variable ($\beta_{\text{std}} = 0.189 $), and political violence ($\beta_{\text{std}} = -0.017$), retain the largest standardized coefficients under Ridge. Meanwhile, variables that were insignificant in the OLS (sd\_temperature, dltot) are shrunk to near-zero, reinforcing the conclusion that they contribute little explanatory power. The increasing optimal penalty from the small model ($ \alpha = 1.76 $) to the large model ($ \alpha = 11.51 $) also reflects the greater need for regularization as model complexity increases.
+            \newpage 
+            \item Then, focus on Norway and period 8 and 9 (not 7 and 8). Make a table similar to Table 3
+            (page 21) and Figure 4 (page 22) in the report. Discuss and interpret your results.
+
+            The code can be found in \verb|analysis.ipynb|. 
+
+            \begin{center}
+                \begin{figure}[H]
+                    \centering
+                    \includegraphics[width=0.8\linewidth]{image4.png}
+                    \caption{Growth contributions for Norway (period 9, annualized)}
+                \end{figure}
+            \end{center}
+
+            Note: The reason why the bars in Figure 1 aren't properly stacked is because some values cancel each other out, so for the sake of presentation, the bars are side by side. Table 4 can be found on the last page. 
+
+            Table 4 presents the growth decomposition for Norway in Period 9 (2010 - 2014), following the methodology outlined in Section 6 of the World Bank report. The analysis uses coefficient estimates from the small model (Column 1 of Table 2) applied to changes in Norway's growth correlates between Period 8 (2005-2009) and Period 9.
+
+            Norway experienced modest negative growth of -1.52\% over the five-year period (-0.30\% annualized). The model predicts approximately zero growth (-0.02\%), leaving a residual of -1.50\%. While larger than the Bangladesh example in the report ($\sim 0.27 $ percentage points), this residual represents less than one percentage point annually and suggests the model captures the broad contours of Norway's growth performance reasonably well. 
+
+            The decomposition reveals three offsetting forces: 
+
+            \textit{Persistence (+5.52\%)}: The largest positive contribution comes from the autoregressive term, reflecting Norway's solid growth in the preceding period (6.92\% from Period 7 to 8). This captures the dynamic implications of the neoclassical growth model discussed in Section 3.1 of the report. Past improvements in growth correlates continue to influence current income levels, though with diminishing effect over time. 
+
+            \textit{Period dummy (-3.52\%)}: The global time effect exerts a substantial drag on predicted growth. This reflects worldwide headwinds during 2010-2014, including the lingering effects of the 2008 global financial crisis, the European sovereign debt crisis, and generally subdued global demand. These factors affected all countries in the sample and are captured through the period fixed effects. 
+
+            \textit{Contemporaneous Changes in Growth Correlates (-2.03\%)}: Domestic factors contributed negatively on net. The largest individual drags came from Climate/temperature variability (-1.32\%), where increased temperature volatility was associated with lower growth, though this coefficient is statistically insignificant in the regression and the economic channel for Norway is unclear. Trade openness (-0.60\%) exhibits a slight decline in trade intensity, possibly reflecting weaker European demand for Norwegian exports. Gov't consumption (-0.52\%) reflects rising government spending as a share of GDP, consistent with counter-cyclical fiscal policy, but associated with slower growth in the model. Lastly, growth volatility (-0.30\%) shows slightly higher output volatility during this period. These negative contributions were partially offset by improvements in infrastructure (+0.46\%) and modest gains from lower inflation (+0.07\%) and urbanization (+0.13\%).
+
+            The unexplained residual of -1.5\% warrants discussion. Following Section 6.3 of the report, several factors may account for this discrepancy. First, Norway is a resource-abundant economy heacily dependent on oil and gas exports. The report explicitly notes that such economies ``feature specific peculiarities that may not be adequately captured by the model.'' Oil prices peaked in 2011-2012 before declining sharply in 2014, creating volatility that the terms-of-trade variable alone does not capture. 
+
+            Second, there may be parameter heteregeneity for Norway relative to the global sample. Section 5.3 demonstrates that growth can correlates can differ systematically across country groups. Norway's position as a high-income, resource-dependent, small open economy may warrant different coefficient estimates than those derived from the pooled global sample. 
+
+            Third, some cyclical factors specific to Norway's petroleum sector may drive short-term deviations from trend that the model, focused on long-run structural correlates does not capture. 
+
+            \begin{table}[H]
+                \centering
+                \caption{Calculation of growth contributions for Norway in Period 9}
+                \label{tab:norway-growth}
+                \begin{tabular}{lccccc}
+                \toprule
+                 & (1) & (2) & (3) & (4) & (5) \\
+                 & & period 8 & period 9 & & growth \\
+                 & parameter & 2005--09 & 2010--14 & Difference & contribution: \\
+                 & & & & (3)--(2) & (1) $\times$ (4) \\
+                \midrule
+                Inflation & $-0.228$ & 0.020 & 0.017 & $-0.003$ & 0.07\% \\
+                (\textit{linflation\_na}) & & & & & \\[0.5em]
+                Real exchange rate & 0.003 & $-1.816$ & $-1.634$ & 0.182 & 0.05\% \\
+                (\textit{lrer}) & & & & & \\[0.5em]
+                Trade openness & 0.082 & 0.836 & 0.762 & $-0.074$ & $-0.60$\% \\
+                (\textit{ltraderesid}) & & & & & \\[0.5em]
+                Infrastructure & 0.082 & 1.014 & 1.069 & 0.056 & 0.46\% \\
+                (\textit{infra\_index}) & & & & & \\[0.5em]
+                Financial crisis & $-0.047$ & 0.000 & 0.000 & 0.000 & 0.00\% \\
+                (\textit{dum\_fincrisis}) & & & & & \\[0.5em]
+                Climate change & $-0.024$ & 7.228 & 7.789 & 0.561 & $-1.32$\% \\
+                (\textit{sd\_temperature}) & & & & & \\[0.5em]
+                Terms of trade changes & $-0.026$ & 0.014 & 0.011 & $-0.003$ & 0.01\% \\
+                (\textit{dltot}) & & & & & \\[0.5em]
+                Government consumption & $-0.047$ & $-2.190$ & $-2.078$ & 0.112 & $-0.52$\% \\
+                (\textit{lkg}) & & & & & \\[0.5em]
+                Growth volatility & $-0.622$ & 0.010 & 0.015 & 0.005 & $-0.30$\% \\
+                (\textit{sd\_growth}) & & & & & \\[0.5em]
+                Change in urban pop. & 0.010 & 1.517 & 1.642 & 0.125 & 0.13\% \\
+                (\textit{durbanpop}) & & & & & \\
+                \midrule
+                \textbf{SUBTOTAL} & & & & & $\mathbf{-2.03\%}$ \\[0.5em]
+                + persistence & 0.798 & \multicolumn{2}{c}{(growth period 7--8)} & 0.069 & 5.52\% \\[0.5em]
+                + period dummy & (=1) & 0.009 & $-0.026$ & $-0.035$ & $-3.52$\% \\
+                \midrule
+                \multicolumn{5}{l}{\textbf{SUM (growth rate over 5 year period as predicted by model)}} & $\mathbf{-0.02\%}$ \\[0.3em]
+                \multicolumn{5}{l}{\textbf{ANNUALIZED} growth rate (=sum divided by 5)} & $\mathbf{-0.00\%}$ p.a. \\
+                \midrule
+                \multicolumn{5}{l}{ACTUAL growth (5-year)} & $-1.52$\% \\[0.3em]
+                \multicolumn{5}{l}{ANNUALIZED actual} & $-0.30$\% p.a. \\[0.3em]
+                \multicolumn{5}{l}{RESIDUAL} & $-1.50$\% \\
+                \bottomrule
+                \end{tabular}
+            \end{table}
+
+
+\end{enumerate}
+
+\printbibliography
+
+\end{document}

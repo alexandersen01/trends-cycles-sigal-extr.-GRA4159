@@ -1,0 +1,264 @@
+\documentclass[10pt]{article}
+
+\usepackage{parskip}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{href-ul}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+ 
+\title{Introduction to National Account Statistics}
+\author{Jakob Sverre Alexandersen\\
+GRA4159 Trends, Cycles \& Signals Extraction\\
+Lecture 1}
+\maketitle
+
+\tableofcontents
+\newpage
+\section{Introduction}
+\subsection{Why do we need NAS}
+National accounts are at the core of the moden system of economic statistics 
+\begin{itemize}
+    \item Delivers timely, reliable, and comprehensice monitoring of economic activity
+    \item Essential to guide policy making
+    \item Essential to guide businesses about general market developments 
+    \item Coherent and internationally agreed upon accounting system 
+\end{itemize}
+\subsection{GDP}
+Gross Domestic Product
+\begin{itemize}
+    \item Most frequently used indicator in the national accounts 
+    \item Available at monthly, quarterly and annual frequency 
+    \item Combines in a single figure, and with no double counting, all the output (or production) carried out by all the firms, non-profit institutions, gov't bodies and households in a given country during a given period, regardless of the type of goods and services produced, provided that the production takes place within the country's economic territory. 
+\end{itemize}
+
+\section{Defining GDP}
+
+Three ways to measure GDP 
+\begin{itemize}
+    \item Output approach 
+    \item Final demand approach
+    \item Income approach
+\end{itemize}
+\subsection{Output approach}
+Let $Y $ be GDP, then: 
+\begin{gather*}
+    Y = \text{Value added = output - intermediate consumption}
+\end{gather*}
+Here intermediate consumption is the stuff used in producing goods and services 
+
+Makes it clear that there is no double counting 
+\subsection{Final demand approach}
+Let $Y $ be GDP, then: 
+\begin{gather*}
+    Y = C + I + G + X + \text{changes in inventories}
+\end{gather*}
+\begin{itemize}
+    \item $C $ is consumption
+    \item $I $ is investment, or more precisely ``Gross Fixed Capital Formation'' (GFCF)
+    \item $G $ is gov't spending 
+    \item $X $ is net exports, i.e., exports minus imports
+\end{itemize}
+\newpage 
+\subsection{The income approach}
+Let $Y $ be GDP, then: 
+\begin{gather*}
+    Y = \text{Income = employees' salaries + company profits}
+\end{gather*}
+Thus, 
+\begin{gather*}
+    \text{Value added = Final demand = income}
+\end{gather*}
+\section{Contributions to Growth}
+Contributions to growth from final demand approach:
+\begin{gather*}
+    \frac{\Delta Y_t}{Y_{t - 1}} = \frac{\Delta C_t}{Y_{t - 1}} + \frac{\Delta I_t}{Y_{t - 1}} + \frac{\Delta G_t}{Y_{t - 1}} + \frac{\Delta X_t}{Y_{t - 1}}
+\end{gather*}
+To get it all in growth rates: 
+\begin{gather*}
+    \frac{\Delta Y_t}{Y_{t}} = \frac{\Delta C_t}{C_{t - 1}}\frac{C_{t - 1}}{Y_{t - 1}} + \frac{\Delta I_t}{I_{t - 1}}\frac{I_{t - 1}}{Y_{t - 1}} + \frac{\Delta G_t}{G_{t - 1}}\frac{G_{t - 1}}{Y_{t - 1}} + \frac{\Delta X_t}{X_{t - 1}}\frac{X_{t - 1}}{Y_{t - 1}}
+\end{gather*}
+Thus, growth in GDP is equal to the growth in its components weighted by their size relative to GDP 
+
+\section{A note on accounting vs. how the economy works}
+\begin{itemize}
+    \item It is important to understand that the NAS relationships are just accounting identities 
+    \item They tell us nothing about how GDP is actually determined and how the economy works. E.g.:
+    \begin{itemize}
+        \item An increase in governmental consumption will per NAS definition, and all else given, increase GDP. But in reality, an increase in governmental consumption might crowd-out other types of consumption and investments s.t. overall GDP remains unaffected or fall!
+        \item An increase in income might lead to more consumption or more saving and investments. I.e., no causal relationships can be inferred from accounting identities
+    \end{itemize}
+\end{itemize}
+\section{Real vs. nominal value}
+\begin{itemize}
+    \item It is important to be aware of the distinction between nominal and real values, often also denoted as measuring in current prices (nominal) or volume (real)
+    \item Generally, we are more interested in the volume, i.e., what the value added of production is after ``controlling'' for price increases. 
+    \item Adjusting for price increases is simple: 
+
+    \begin{gather*}
+        [1 + \text{growth rate (\%) of GDP in volume}] \\= \frac{[1 + \text{growth rate (\%) of GDP at current prices}]}{[1 + \text{growth rate (\%) of the GDP deflator}]}
+    \end{gather*}
+    \item We can do the same for many other NAS entities, such as consumption and investment
+    \item This also applies to absolute levels, e.g., $GDP_r = \frac{GDP_n}{\text{deflator} / 100}$
+\end{itemize}
+\newpage 
+\section{Deflator and base-year}
+\begin{itemize}
+    \item The GDP deflator, also called ``the implicit GDP price index'' or, simply ``implicit GDP deflator''
+    \item It is a measure of the money price of all new, domestically produced, final goods and services in an economy in a year relative to the real value of them 
+    \item The deflator is an index, with a value set to 100 in a so-called base-year 
+    \item The deflator can also be interpreted as a measure of inflation, i.e., changes in the deflator is inflation.
+\end{itemize}
+\section{Quantities vs. volume}
+It is essential to understand the difference between an increase in quantities and an increase in volume in order to grasp the measurement of growth as recorded in the national accounts. In particular, volume takes into account all kinds of differences in quality and price changes. 
+\begin{itemize}
+    \item To aggregate value added (utility we get from production) of many products and services, they need to be measured in the same units. In NSA, their price structure is used to do so 
+    \item Summation of physical units are weighted by the prices of these units 
+    \item But, both quantities and prices change! It is therefore necessary to ``freeze'' the variation in prices. I.e., the base-year 
+\end{itemize}
+\section{Laspeyres and Paasche indexes}
+Formally, when constructing aggregate NAS statistics, statisticians use Laspeyres and Paasche indexes 
+\begin{itemize}
+    \item The Laspeyres volume index is the most widely used formula for calculating aggregated volume indices for national accounts 
+    \begin{itemize}
+        \item A Laspeyres volume index is a weighted average of changes in quantities, weighted by the values at current prices in the base year. 
+    \end{itemize}
+    \item The Paasche price index is the most widely used formula for calculating aggregated prices indices in the national accounts 
+    \begin{itemize}
+        \item The product of the Laspeyres volume index and the Paasche price index is equal to the index of current prices 
+    \end{itemize}
+\end{itemize}
+\section{Important issues with the NAS}
+\begin{itemize}
+    \item Constant prices vs. ``chain linking''
+    \item Reporting logs
+    \item Revisions 
+    \item Welfare
+\end{itemize}
+\newpage 
+\section{Issues with ``normalization''}
+Deflating is similar to normalizing the measurement to a fixed year price level 
+\begin{itemize}
+    \item But, the coice of a fixed year (base-year) means that one is using price structures that become more and more remote from the current structure, the further one moves away from the base year 
+    \item This can create important issues. E.g.:
+    \begin{itemize}
+        \item Price of computers have fallen dramatically over time (and increased a lot in quality)
+        \item Using ``old'' prices to infer new volume results in over-estimation because prices now are much lower than before 
+    \end{itemize}
+    \item For this reason, most NAS use so-called ``chain-linking methods'', where the price structures used in aggregation are always the previous period's prices 
+    \item But, chain-linking methods make the NSA statistics non-additive. Thus, statistics derived from them cannot be used in accounting identities, and they cannot be used to compile shares. They can only be used to derive growth rates 
+\end{itemize}
+\section{Reporting lags}
+\begin{itemize}
+    \item Gathering and compiling all the data needed to produce the NAS is complicated. For this reason, publication of NAS are delayed. Typically 1-2 months 
+    \item This has important implications in practice. E.g., for policymakers or investors that need to monitor the markets on a day-to-day basis, reporting lags mean that they have less information than what they otherwise could have had. 
+    \item For this reason, people, banks, and institutions have constructed a number of so-called leading indicators. 
+\end{itemize}
+\section{Revisions}
+\begin{itemize}
+    \item Gathering and compiling all the data needed to produce the NAS is complicated. For this reason, publications of NAS are subject to revisions. E.g.:
+    \begin{itemize}
+        \item When the NSA for Q4 2022 in Norway is realized in February 2023, the numbers for Q3 2022 will not likely be the same as those published in November 2022
+    \end{itemize}
+    \item In economic jargon, using the economic data that was available at the relevant time period is caled using real-time data. In this setting, each update of the NSA is called a vintage. 
+    \item When modeling economic behavior and fluctuations, evaluating policy, etc., it is often very important to take the real-time data issue into account (but often this is not done...). Why? Because close to all economic decisions are based on what we expect will happen in the future given what we know today 
+\end{itemize}
+\newpage 
+\section{Welfare}
+The national accounts focus on measuring economic activity rather than welfare per se. E.g.: 
+\begin{itemize}
+    \item Activities that are not priced are not in NAS. Still, we might value these activities 
+    \item NAS makes no distributional considerations, but the welfare concept does 
+    \item Prices might not be ``correct''. E.g., there might be externalities that are not in the prices 
+    \item Sustainability issues are not included but have an effect on welfare. 
+\end{itemize}
+Still, GDP is commonly regarded as being a good partial measure of welfare 
+\section{Other important macro data}
+\subsection{Price indexes}
+The GDP deflator is one type of price index. Many more exist. The most important (at least in this course), is the consumer price index (CPI). 
+\begin{itemize}
+    \item The CPI measures prices of a wide variety of goods and services households typically consume. Changes in the CPI are called inflation 
+    \item Often we want to focus on so-called core inflation. That is, inflation adjusted for (excluding) changes in e.g., taxes and energy. Why? Because these latter changes are typically either very volatile or assumed to be infrequent changes not having persistent effects on overall inflation
+\end{itemize}
+\subsection{Interest rates}
+The interest rate is often referred to (somewhat imprecisely) as the price of money 
+\begin{itemize}
+    \item Many interest rates exist in the money market. The most imporant is that set by the central bank: ``The lender of last resort'' / the bank for the banks 
+    \item Why? Because money is only worth something when their value is trusted. The central bank has monopoly on producing money, and their interest rate determines the price 
+\end{itemize}
+\subsection{Real and nominal interest rates}
+The central bank sets the nominal policy rate. In turn, this rate affects all other interest rates in the market. But, what really matters for the macro economy is the real interest rate. I.e., the rate adjusted for inflation. 
+
+Let $i_t $ denote the nominal rate and $\pi_t $ inflation (in percent). Then, the real rate is simply $r_t = i_t - \pi_t $ (note: this is just another identity – says nothing about how those entities are actually determined in the market).
+
+E.g.: If you save 1000NOK in your savings account to an interest rate of 5\%, you will have earned 50NOK at the end of the first year. But, if the general price level (inflation) has been 10\% during that year, your purchasing power has actually decreased. That is, it would have been better to buy the goods and services you need at the beginnning of the year (before their prices increased) rather than saving the money to an interest rate lower than inflation 
+\newpage 
+\section{Data transformations and interpretation}
+\subsection{Some important data transformation typically used}
+In economics and macro we often prefer working with logs 
+\begin{itemize}
+    \item Makes relationships additive and linear 
+    \item Often helps in terms of interpreting regression output 
+\end{itemize}
+\subsection{Percent change calculations}
+First, the percent change is a linear approximation of the log difference! 
+\begin{gather*}
+    \log(Y_2) - \log(Y_1) = \log\left(\frac{Y_2}{Y_1}\right)\approx \frac{Y_2}{Y_1} - 1 = \frac{Y_2 - Y_1}{Y_1}
+\end{gather*}
+Why? Take the first-orded Taylor approximation of $\log(X) $ around 1: 
+\begin{gather*}
+    \log(X) \approx \log(1) + \frac{d}{dX}\log(X)|_{X = 1}(X - 1) = 0 + \frac{1}{1}(X - 1)
+\end{gather*}
+Thus, the approximation holds for changes that are not far away from 1
+\subsection{Cumulative growth}
+Working with logs also makes computing cumulative effects easier. 
+
+Let $\Delta x_t = \log(X_t) - \log(X_{t - 1})$, then the cumulative growth effect of $X_t $ from $t $ to $t + h $ is:
+\begin{gather*}
+    \sum_{i = t + 1}^{i = t + h}\Delta x_i = (x_{t + 1} - x_t) + (x_{t + 2} - x_{t + 1}) + … + (x_{t + h} - x_{t + h - 1}) = (x_{t + h} - x_t)
+\end{gather*}
+E.g., if we specify a model in log growth, which we often do, and make a prediction for log growth, the cumulative effect of the prediction would be the predicted percent change in the level of the variable at each point in time between $ t $ and $t + h $
+\newpage 
+\subsection{Interpreting regression coefficients}
+Case 1: the linear-log model: 
+\begin{gather*}
+    y = \alpha + \beta\log(x) + \epsilon \Rightarrow \mathbb{E}(y|x) = \alpha + \beta\log(x)
+\end{gather*}
+What is the effect of one unit increase in $x $ on $y $, i.e., $dy/dx $?
+\begin{gather*}
+    \frac{dy}{dx} = \frac{\beta}{x} \Rightarrow \beta = \frac{dy}{dx/x}
+\end{gather*}
+Interpretation $\beta $: A change in $x $ by one percent is associated with a $0.01 \times\beta $ change in $y $.
+
+Case 2: the log-linear model
+\begin{gather*}
+    \log(y) = \alpha + \beta x + \epsilon \Rightarrow \mathbb{E}\big(\log(y)|x\big) = \alpha + \beta x
+\end{gather*}
+What is the effect of one unit increase in $x $ on $y $, i.e., $dy/dx $?
+\begin{gather*}
+    y = e^{\alpha + \beta x} \frac{dy}{dx} = y\beta \Rightarrow \frac{dy}{y} = \beta dx \Rightarrow \beta = \frac{dy/dx}{dx}
+\end{gather*}
+Interpretation $\beta $: A change in $x $ by one unit is associated with a $100\times\beta $ percent change in $y $.
+
+Case 3: the log-log model: 
+\begin{gather*}
+    \log(y) = \alpha + \beta\log(x) + \epsilon \Rightarrow \mathbb{E}\big(\log(y)|\log(x)\big) = \alpha + \beta\log(x)
+\end{gather*}
+What is the effect of one unit increase in $x $ on $y $, i.e., $dy/dx $?
+\begin{gather*}
+    y = e^{\alpha + \beta\log(x)} \frac{dy}{dx} = \frac{y\beta}{x}\Rightarrow \beta = \frac{dy/y}{dx/x}
+\end{gather*}
+Interpretation $\beta $: A change in $x $ by one percent is associated with a $\beta $ percent change in $y $, i.e., the elasticity of $y $ wrt $x$
+
+What to use? Case 1, 2 or 3? The data and the interpretation you want determines the answer. But remember, can not take log of negative values!
+
+\end{document}

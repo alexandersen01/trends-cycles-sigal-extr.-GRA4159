@@ -1,0 +1,135 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{wacker2024leveraging}{report}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=7442a6f216fa1b53b3a41968191c197a}{%
+           family={Wacker},
+           familyi={W\bibinitperiod},
+           given={Konstantin\bibnamedelima M.},
+           giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6135f669ad8de01a40fe318781d52c1a}{%
+           family={Beyer},
+           familyi={B\bibinitperiod},
+           given={Robert\bibnamedelima C.M.},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=caa14737f536e3319901fa4a112da6ac}{%
+           family={Moller},
+           familyi={M\bibinitperiod},
+           given={Lars\bibnamedelima Christian},
+           giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {World Bank Group}%
+      }
+      \list{location}{1}{%
+        {Washington, D.C.}%
+      }
+      \strng{namehash}{03ab215c87efa30ca2f52dad2a80b6d3}
+      \strng{fullhash}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \strng{fullhashraw}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \strng{bibnamehash}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \strng{authorbibnamehash}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \strng{authornamehash}{03ab215c87efa30ca2f52dad2a80b6d3}
+      \strng{authorfullhash}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \strng{authorfullhashraw}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{number}{WPS10751}
+      \field{title}{Leveraging Growth Regressions for Country Analysis}
+      \field{type}{Policy Research Working Paper}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb http://documents.worldbank.org/curated/en/099217304102412750
+      \endverb
+      \verb{url}
+      \verb http://documents.worldbank.org/curated/en/099217304102412750
+      \endverb
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global/global}
+    \entry{wacker2024leveraging}{report}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=7442a6f216fa1b53b3a41968191c197a}{%
+           family={Wacker},
+           familyi={W\bibinitperiod},
+           given={Konstantin\bibnamedelima M.},
+           giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6135f669ad8de01a40fe318781d52c1a}{%
+           family={Beyer},
+           familyi={B\bibinitperiod},
+           given={Robert\bibnamedelima C.M.},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=caa14737f536e3319901fa4a112da6ac}{%
+           family={Moller},
+           familyi={M\bibinitperiod},
+           given={Lars\bibnamedelima Christian},
+           giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {World Bank Group}%
+      }
+      \list{location}{1}{%
+        {Washington, D.C.}%
+      }
+      \strng{namehash}{03ab215c87efa30ca2f52dad2a80b6d3}
+      \strng{fullhash}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \strng{fullhashraw}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \strng{bibnamehash}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \strng{authorbibnamehash}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \strng{authornamehash}{03ab215c87efa30ca2f52dad2a80b6d3}
+      \strng{authorfullhash}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \strng{authorfullhashraw}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{number}{WPS10751}
+      \field{title}{Leveraging Growth Regressions for Country Analysis}
+      \field{type}{Policy Research Working Paper}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb http://documents.worldbank.org/curated/en/099217304102412750
+      \endverb
+      \verb{url}
+      \verb http://documents.worldbank.org/curated/en/099217304102412750
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
