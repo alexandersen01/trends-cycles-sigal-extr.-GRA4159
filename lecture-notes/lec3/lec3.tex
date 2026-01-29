@@ -1,0 +1,101 @@
+\documentclass[10pt]{article}
+
+\usepackage{parskip}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{href-ul}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+ 
+\title{Monetary policy: Inflation targeting in a closed economy}
+\author{Jakob Sverre Alexandersen\\
+GRA4159 Trends, Cycles \& Signals Extraction\\
+Lecture 3}
+\maketitle
+
+\tableofcontents
+\newpage
+\section{How does monetary policy work?}
+The policy rate is the most important tool for the central bank 
+\begin{itemize}
+    \item In Norway: the interest rate on large banks overnight deposits at Norges Bank (up to a quota)
+    \item Createas the floor for market interest rate 
+    \item Affects the rate of inflation and other key macroeconomic variables through different channels 
+    \item Works through several channels
+    \begin{itemize}
+        \item Exchange rate channel
+        \item Expectations channel
+        \item Demand channel
+    \end{itemize}
+\end{itemize}
+\section{Monetary policy trade offs}
+Critera for an appropriate interest rate path:
+\begin{enumerate}
+    \item The inflation target is achieved: the interest rate path should stabilize inflation at target or bring inflation back to target after a deviation has occured 
+    \item The inflation targeting regime is flexible: The interest rate path should provide a reasonable balance between the path for inflation and the path for capacity utilization in the economy 
+    \item Monetary poly is robust: the interest rate should be set so that monetary policy mitigates the risk of a buildup of financial imbalances, and so that acceptable developments in inflation and output are also the likely outcome under alternative assumptions about the functioning of the economy
+\end{enumerate}
+\section{Monetary policy under inflation targeting}
+\textbf{transmission mechanism}
+\begin{itemize}
+    \item the output gap 
+    \begin{gather*}
+        y = \alpha(i - \pi^e - \rho) + v
+    \end{gather*}
+    where $y = \frac{Y - \bar{Y}}{\bar{Y}} $ denotes the output gap and the real interest rate is $r = i - \pi^e $
+    \item alternatively, we can write the IS-equation as 
+    \begin{gather*}
+        y = \alpha(r - \bar{r})
+    \end{gather*}
+    where $\bar{r} = \rho + \frac{1}{\alpha}v $ is the short-run neutral real rate 
+    \item inflation equation:
+    \begin{gather*}
+        \pi = \pi^e + \gamma y + u
+    \end{gather*}
+    where $u $ is a cost-push shock (or inflation shock)
+\end{itemize}
+\newpage
+\textbf{monetary policy}
+\begin{itemize}
+    \item loss function: 
+    \begin{gather*}
+        L = \frac{1}{2}\left[(\pi - \pi^*)^2 + \lambda y^2\right]
+    \end{gather*}
+    \item parameter $\lambda $ measures how much weight the central bank assigns to production stability relative to price stability
+    \begin{itemize}
+        \item $\lambda = 0 $: strict inflation targeting 
+        \item $\lambda > 0 $: flexible inflation targeting 
+        \item $\lambda = \infty $: output gap targeting 
+    \end{itemize}
+\end{itemize}
+\textbf{optimal monetary policy}
+\begin{itemize}
+    \item minimize the loss function, given the economic mechanisms described above: 
+    \begin{gather*}
+        \min_r \frac{1}{2}\left[(\pi - \pi^*)^2 + \lambda y^2\right]
+    \end{gather*}
+    \item the FOC can be written as: 
+    \begin{gather*}
+        \pi - \pi^* = \frac{-\lambda}{\gamma}y \iff y = -\frac{\gamma}{\lambda}(\pi - \pi^*)
+    \end{gather*}
+    the latter shows the extent to which the central bank is willing to drive the economy into a recession when inflation is above the target
+\end{itemize}
+
+% \begin{center}
+%     \begin{figure}[H]
+%         \centering
+%         \includegraphics[width=0.8\linewidth]{image.png}
+%     \end{figure}
+% \end{center}
+
+
+\end{document}

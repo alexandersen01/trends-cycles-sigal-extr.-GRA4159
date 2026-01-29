@@ -1,0 +1,3 @@
+\contentsline {section}{\numberline {1}How does monetary policy work?}{2}{section.1}%
+\contentsline {section}{\numberline {2}Monetary policy trade offs}{2}{section.2}%
+\contentsline {section}{\numberline {3}Monetary policy under inflation targeting}{2}{section.3}%

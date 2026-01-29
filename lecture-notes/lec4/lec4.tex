@@ -1,0 +1,151 @@
+\documentclass[10pt]{article}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+
+\usepackage{parskip}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{href-ul}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+ 
+\title{Monetary policy: Inflation targeting in a closed economy pt. 2}
+\author{Jakob Sverre Alexandersen\\
+GRA4159 Trends, Cycles \& Signals Extraction\\
+Lecture 4}
+\maketitle
+
+\tableofcontents
+\newpage
+\section{Inflation targeting and financial stability}
+\begin{itemize}
+    \item Two opposing views: 
+    \begin{itemize}
+        \item Central banks have to reconsider the desirability of (read: abandon) inflation targeting 
+        \item Financial stability is not relevant for monetary policy
+    \end{itemize}
+    \item Woodford (2012): inflation targeting needs to be revised
+    \item The CB cares about financial stability and wishes to set the interest rate in such a way that financial imbalances are as small as possible
+    \item The loss function 
+    \begin{gather*}
+        L = \frac{1}{2}\left[(\pi - \pi^*)^2 + \lambda y^2 + \delta q^2\right]
+    \end{gather*}
+    $q $ is a financial variable measured as a deviation from its mean 
+    \begin{itemize}
+        \item High values of $q $ (think credit) gives ``high'' probability of a financial crisis / recession 
+        \item Low values of $q $ is a sign that it is too hard to get credit 
+        \item Woodford (2012): financial crises give loss to society and not only because it leads to a drop in economic activity
+    \end{itemize}
+\end{itemize}
+\subsection{Economic mechanism}
+\begin{itemize}
+    \item IS and PC equations as before 
+    \item The interest rate influences the size of financial imbalances: 
+    \begin{gather*}
+        q = -\phi(r - \rho) + w
+    \end{gather*}
+    where $w $ is a shock to financial imbalances
+    \item We can write the equation above as 
+    \begin{gather*}
+        q = -\phi\left(r - \overset{\sim}{r}\right)
+    \end{gather*}
+    where $\overset{\sim}{r} = \rho + \frac{1}{\phi}w$ is the real rate that closes the financial gap
+\end{itemize}
+\newpage
+\subsection{The monetary policy transmission mechanism}
+A reduction in the key policy rate 
+
+\begin{center}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{image.png}
+    \end{figure}
+\end{center}
+\subsection{Optimal monetary policy}
+\begin{itemize}
+    \item The central bank minimizes the loss function subject to some equations
+    \item The optimality condition becomes 
+    \begin{gather*}
+        (\pi - \pi^*) = -\frac{\lambda}{\gamma}y - \frac{\phi\delta}{\alpha\gamma}q\\
+        y = -\frac{\gamma}{\lambda}(\pi - \pi^*) - \frac{\phi / \alpha}{\lambda / \delta} q
+    \end{gather*}
+    \item It can be written as: 
+    \begin{gather*}
+        (\pi - \pi^*) = -\frac{\lambda}{\gamma}y - \frac{\phi\delta}{\alpha\gamma}q\\
+        = -\frac{\lambda + \delta\left(\frac{\phi}{\alpha}\right)^2}{\gamma}y - \frac{\phi\delta}{\gamma\alpha^2}(\alpha w - \phi v)
+    \end{gather*}
+\end{itemize}
+\subsection{Graphical analysis}
+\begin{itemize}
+    \item To simplify, we assume $\pi^e = \pi^* $
+    \item We will use two diagrams: 
+    \begin{enumerate}
+        \item $(y, \pi)$-diagram with two equations: 
+        \begin{itemize}
+            \item The Phillips curve (PC) with positive slope $\gamma $
+            \item Monetary policy (MP) - with negative slope $-\frac{\lambda + \delta\left(\frac{\phi}{\alpha}\right)^2}{\gamma} $
+        \end{itemize}
+        \item $(y, r)$-diagram with one equation: 
+        \begin{itemize}
+            \item IS-equation solved wrt. the real interest rate
+            \begin{gather*}
+                r = \rho + \frac{1}{\alpha}v - \frac{1}{\alpha}y
+            \end{gather*}
+        \end{itemize}
+    \end{enumerate}
+\end{itemize}
+\newpage 
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{image2.png}
+    \end{minipage}\hfill
+    \begin{minipage}{0.48\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{image3.png}
+    \end{minipage}
+\end{figure}
+\subsection{A more realistic model}
+\begin{itemize}
+    \item Financial imbalances tend to build up in booms 
+    \item Financial variables feed back to the level of activity and we get a financial accelerator 
+    \item More specifically, we assume the following: 
+    \begin{gather*}
+        q = \tau y - \phi(r - \rho) + w\\
+        y = -\alpha(r - \rho) + \chi q + v
+    \end{gather*}
+    while the rate of inflation is still given by the old equation
+\end{itemize}
+A reduction in the key policy rate 
+\begin{center}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{image4.png}
+    \end{figure}
+\end{center}
+
+\begin{itemize}
+    \item Our equations can be rewritten as 
+    \begin{gather*}
+        y = -\frac{\alpha + \chi\phi}{1 - \chi\tau}(r - \bar{r}) = -\bar{\alpha}(r - \bar{r})\\
+        q = -\frac{\tau\alpha + \phi}{1 - \chi\tau}\left(r - \overset{\sim}{r}\right) = -\bar{\phi}\left(r - \overset{\sim}{r}\right)
+    \end{gather*}
+    where $\bar{r} = \rho + \frac{1}{\alpha + \chi\tau}v + \frac{\chi}{\alpha + \chi\tau}w \text{ and } \overset{\sim}{r} = \rho + \frac{\tau}{\tau\alpha + \phi}v + \frac{1}{\tau\alpha + \phi}w $
+    \item The optimality condition becomes 
+    \begin{gather*}
+        (\pi - \pi^*) = -\frac{\lambda}{\gamma}y - \frac{\bar{\phi}\delta}{\bar{\alpha}\gamma}q
+    \end{gather*}
+\end{itemize}
+
+
+\end{document}
