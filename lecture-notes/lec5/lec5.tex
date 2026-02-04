@@ -1,0 +1,117 @@
+\documentclass[10pt]{article}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+
+\usepackage{parskip}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{href-ul}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+ 
+\title{Monetary policy: Inflation targeting in an open economy pt. 3}
+\author{Jakob Sverre Alexandersen\\
+GRA4159 Trends, Cycles \& Signals Extraction\\
+Lecture 5}
+\maketitle
+
+\tableofcontents
+\newpage
+\section{Inflation targering in an SOE}
+\textbf{Transmission mechanism}
+\begin{itemize}
+    \item The open-economy IS-curve: 
+    \begin{gather*}
+        y = - \alpha_1(r - \rho) + \alpha_2e + v
+    \end{gather*}
+    where $e = s + p^* - p $ is the real exchange rate (in logs)
+    \item The open-economy Phillips curve: 
+    \begin{gather*}
+        \pi = \pi^e + \gamma_1y + \gamma_2 + u
+    \end{gather*}
+    \item The real UIP:
+    \begin{gather*}
+        e = e^e - (r - r^*) + z \iff r = r^* + (e^e - e) + z
+    \end{gather*}
+\end{itemize}
+
+\textbf{The monetary policy transmission mechanism}
+
+A reduction in the key policy rate 
+\begin{center}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.6\linewidth]{image.png}
+    \end{figure}
+\end{center}
+\newpage
+\textbf{Monetary policy}
+\begin{itemize}
+    \item The central bank minimizes the loss 
+    \begin{gather*}
+        L = \frac{1}{2}\left[(\pi - \pi^*)^2 + \lambda y^2\right]
+    \end{gather*}
+    \item The optimality condition is 
+    \begin{gather*}
+        \pi - \pi^* = -\frac{\lambda}{\gamma_1 + \frac{\gamma_2}{\alpha_1 + \alpha_2}}y
+    \end{gather*}
+    which again can be written as 
+    \begin{gather*}
+        y = -\frac{\gamma_1 + \frac{\gamma_2}{\alpha_1 + \alpha_2}}{\lambda}(\pi - \pi^*)
+    \end{gather*}
+    \item Reduced-form IS equation:
+    \begin{gather*}
+        y = -(\alpha_1 + \alpha_2)(r - \bar{r})
+    \end{gather*}
+    where $\bar{r} = \rho + \frac{1}{\alpha_1 + \alpha_2}v + \frac{\alpha_2}{\alpha_1 + \alpha_2}\big((r^* - \rho) + e^e + z\big) $
+    \item Reduced-form Phillips curve: 
+    \begin{gather*}
+        \pi = \pi^2 + \left(\gamma_1 + \frac{\gamma_2}{\alpha_1 + \alpha_2}\right)y + u^{\text{open}}
+    \end{gather*}
+    where $u^{\text{open}} = u + \frac{\gamma_2}{\alpha_1 + \alpha_2}\big(\alpha_1(r^* - \rho + e^e + z) - v\big) $
+    \item The optimality condition is 
+    \begin{gather*}
+        \pi - \pi^* = -\frac{\lambda}{\gamma_1 + \frac{\gamma_2}{\alpha_1 + \alpha_2}}y
+    \end{gather*}
+\end{itemize}
+\subsection{Graphical analysis}
+\begin{itemize}
+    \item To simplify the figures, we let $\pi^e = \pi^*, r^* = \rho \text{ and } e^e = 0 $
+\end{itemize}
+\begin{enumerate}
+    \item The $(y, \pi)$-diagram 
+    \begin{itemize}
+        \item We use the reduced-form PC and thereby we take into account that inflation depends on the real exchange rate 
+        \item MP --- with slope $-\frac{\lambda}{\gamma_1 + \frac{\gamma_2}{\alpha_1 + \alpha_2}} $
+    \end{itemize}
+    \item The $(y, r)$-diagram
+    \begin{itemize}
+        \item IS given by: 
+        \begin{gather*}
+            r = \bar{r} - \frac{1}{\alpha_1 + \alpha_2}y
+        \end{gather*}
+    \end{itemize}
+\end{enumerate}
+\newpage 
+\begin{figure}[h]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{image2.png}
+    \end{minipage}\hfill
+    \begin{minipage}{0.48\textwidth}
+      \centering
+      \includegraphics[width=\linewidth]{image3.png}
+    \end{minipage}
+\end{figure}
+
+\end{document}

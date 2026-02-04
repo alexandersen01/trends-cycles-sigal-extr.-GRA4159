@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.4.13)  4 FEB 2026 09:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.4.13)  4 FEB 2026 09:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/jakobsverrealexandersen/Documents/trends-cycles-sigal-extr.-GRA4159/lecture-notes/lec4/lec4.tex
-(/Users/jakobsverrealexandersen/Documents/trends-cycles-sigal-extr.-GRA4159/lecture-notes/lec4/lec4.tex
+**/Users/jakobsverrealexandersen/Documents/trends-cycles-sigal-extr.-GRA4159/lecture-notes/lec5/lec5.tex
+(/Users/jakobsverrealexandersen/Documents/trends-cycles-sigal-extr.-GRA4159/lecture-notes/lec5/lec5.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls
@@ -568,8 +568,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count332
 \l__pdf_internal_box=\box119
-) (lec4.aux)
-\openout1 = `lec4.aux'.
+) (lec5.aux)
+\openout1 = `lec5.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
 LaTeX Font Info:    ... okay on input line 19.
@@ -643,9 +643,9 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 19.
-(lec4.out) (lec4.out)
+(lec5.out) (lec5.out)
 \@outlinefile=\write4
-\openout4 = `lec4.out'.
+\openout4 = `lec5.out'.
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
  (/Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
@@ -654,64 +654,57 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
  (/Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (lec4.toc)
+) (lec5.toc)
 \tf@toc=\write5
-\openout5 = `lec4.toc'.
+\openout5 = `lec5.toc'.
 
 
 
 [1
 
 {/Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map}]
-
-[2]
-<image.png, id=58, 845.1575pt x 425.59pt>
+<image.png, id=27, 737.75626pt x 358.33875pt>
 File: image.png Graphic file (type png)
 <use image.png>
-Package pdftex.def Info: image.png  used on input line 70.
-(pdftex.def)             Requested size: 281.85587pt x 141.93224pt.
+Package pdftex.def Info: image.png  used on input line 53.
+(pdftex.def)             Requested size: 281.85587pt x 136.89735pt.
 
 
-[3 <./image.png>]
-<image2.png, id=69, 683.55376pt x 731.73375pt>
+[2 <./image.png>]
+
+[3]
+<image2.png, id=49, 410.53375pt x 631.35875pt>
 File: image2.png Graphic file (type png)
 <use image2.png>
-Package pdftex.def Info: image2.png  used on input line 111.
-(pdftex.def)             Requested size: 225.4804pt x 241.37239pt.
-<image3.png, id=70, 498.86375pt x 709.65125pt>
+Package pdftex.def Info: image2.png  used on input line 109.
+(pdftex.def)             Requested size: 225.4804pt x 346.7667pt.
+<image3.png, id=50, 422.57875pt x 627.34375pt>
 File: image3.png Graphic file (type png)
 <use image3.png>
-Package pdftex.def Info: image3.png  used on input line 115.
-(pdftex.def)             Requested size: 225.4804pt x 320.7478pt.
-<image4.png, id=71, 815.045pt x 408.52625pt>
-File: image4.png Graphic file (type png)
-<use image4.png>
-Package pdftex.def Info: image4.png  used on input line 133.
-(pdftex.def)             Requested size: 281.85587pt x 141.27208pt.
+Package pdftex.def Info: image3.png  used on input line 113.
+(pdftex.def)             Requested size: 225.4804pt x 334.74971pt.
 
 
-[4 <./image2.png> <./image3.png> <./image4.png>]
-
-[5] (lec4.aux)
+[4 <./image2.png> <./image3.png>] (lec5.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-Package rerunfilecheck Info: File `lec4.out' has not changed.
-(rerunfilecheck)             Checksum: AC610E504C997C5BFB129B12D2C6CCFB;1203.
+Package rerunfilecheck Info: File `lec5.out' has not changed.
+(rerunfilecheck)             Checksum: 80B31910AA0D231EAF664121A8765B63;350.
  ) 
 Here is how much of TeX's memory you used:
- 21863 strings out of 473530
- 420269 string characters out of 5697419
- 791403 words of memory out of 5000000
- 44703 multiletter control sequences out of 15000+600000
+ 21847 strings out of 473530
+ 420025 string characters out of 5697419
+ 793402 words of memory out of 5000000
+ 44692 multiletter control sequences out of 15000+600000
  567141 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,11n,107p,635b,502s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,11n,107p,635b,438s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi5.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr5.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on lec4.pdf (5 pages, 353318 bytes).
+Output written on lec5.pdf (4 pages, 285475 bytes).
 PDF statistics:
- 146 PDF objects out of 1000 (max. 8388607)
- 15 named destinations out of 1000 (max. 500000)
- 81 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 119 PDF objects out of 1000 (max. 8388607)
+ 10 named destinations out of 1000 (max. 500000)
+ 44 words of extra memory for PDF output out of 10000 (max. 10000000)
 
