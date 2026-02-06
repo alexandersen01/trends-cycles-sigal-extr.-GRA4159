@@ -1,0 +1,449 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{apa/apasortcite//global/global/global}
+    \entry{87e157cf-0c39-3c03-80d6-6ece5bed6979}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=8ea1d54fee57ba07b648601ddd77664a}{%
+           family={Blanchard},
+           familyi={B\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9f86081942834923a86a56e2f4d2a7cd}{%
+           family={Galí},
+           familyi={G\bibinitperiod},
+           given={Jordi},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {[Wiley, Ohio State University Press]}%
+      }
+      \strng{namehash}{c6fb321ce00b9ced28c69658ffdc8405}
+      \strng{fullhash}{c6fb321ce00b9ced28c69658ffdc8405}
+      \strng{fullhashraw}{c6fb321ce00b9ced28c69658ffdc8405}
+      \strng{bibnamehash}{c6fb321ce00b9ced28c69658ffdc8405}
+      \strng{authorbibnamehash}{c6fb321ce00b9ced28c69658ffdc8405}
+      \strng{authornamehash}{c6fb321ce00b9ced28c69658ffdc8405}
+      \strng{authorfullhash}{c6fb321ce00b9ced28c69658ffdc8405}
+      \strng{authorfullhashraw}{c6fb321ce00b9ced28c69658ffdc8405}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Most central banks perceive a trade-off between stabilizing inflation and stabilizing the gap between output and desired output. However, the standard new Keynesian framework implies no such trade-off. In that framework, stabilizing inflation is equivalent to stabilizing the welfare-relevant output gap. In this paper, we argue that this property of the new Keynesian framework, which we call the divine coincidence, is due to a special feature of the model: the absence of nontrivial real imperfections. We focus on one such real imperfection, namely, real wage rigidities. When the baseline new Keynesian model is extended to allow for real wage rigidities, the divine coincidence disappears, and central banks indeed face a trade-off between stabilizing inflation and stabilizing the welfare-relevant output gap. We show that not only does the extended model have more realistic normative implications, but it also has appealing positive properties. In particular, it provides a natural interpretation for the dynamic inflation-unemployment relation found in the data.}
+      \field{issn}{00222879, 15384616}
+      \field{journaltitle}{Journal of Money, Credit and Banking}
+      \field{title}{Real Wage Rigidities and the New Keynesian Model}
+      \field{urlday}{5}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{39}
+      \field{year}{2007}
+      \field{urldateera}{ce}
+      \field{pages}{35\bibrangedash 65}
+      \range{pages}{31}
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/4123055
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/4123055
+      \endverb
+    \endentry
+    \entry{fernald_inklaar_ruzic_2025_productivity_slowdown}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=b29af96d3e827b3e020afbe44042f783}{%
+           family={Fernald},
+           familyi={F\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4fe796e727c5032c0bce181041e95365}{%
+           family={Inklaar},
+           familyi={I\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5d2d7ac6c754c84c461773ddf0d472be}{%
+           family={Ruzic},
+           familyi={R\bibinitperiod},
+           given={Dimitrije},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c8ab77d082b116120952ddbb8cdcffa6}
+      \strng{fullhash}{d1f1d95efd1245068820a9240ec3ae46}
+      \strng{fullhashraw}{d1f1d95efd1245068820a9240ec3ae46}
+      \strng{bibnamehash}{d1f1d95efd1245068820a9240ec3ae46}
+      \strng{authorbibnamehash}{d1f1d95efd1245068820a9240ec3ae46}
+      \strng{authornamehash}{c8ab77d082b116120952ddbb8cdcffa6}
+      \strng{authorfullhash}{d1f1d95efd1245068820a9240ec3ae46}
+      \strng{authorfullhashraw}{d1f1d95efd1245068820a9240ec3ae46}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Review of Income and Wealth}
+      \field{month}{2}
+      \field{number}{1}
+      \field{title}{The Productivity Slowdown in Advanced Economies: Common Shocks or Common Trends?}
+      \field{urlday}{6}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{71}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \field{pages}{e12690}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1111/roiw.12690
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1111/roiw.12690
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1111/roiw.12690
+      \endverb
+    \endentry
+    \entry{roisland_sveen_2018_monetary_policy_inflation_targeting}{report}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=b44bef282993a8888bd2f98494cf77ce}{%
+           family={R{ø}island},
+           familyi={R\bibinitperiod},
+           given={{Ø}istein},
+           giveni={Ø\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=38682c72d78f5c490e49978591dbd956}{%
+           family={Sveen},
+           familyi={S\bibinitperiod},
+           given={Tommy},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Norges Bank}%
+      }
+      \strng{namehash}{be4bd2cef3adec8777633c33a0a4111d}
+      \strng{fullhash}{be4bd2cef3adec8777633c33a0a4111d}
+      \strng{fullhashraw}{be4bd2cef3adec8777633c33a0a4111d}
+      \strng{bibnamehash}{be4bd2cef3adec8777633c33a0a4111d}
+      \strng{authorbibnamehash}{be4bd2cef3adec8777633c33a0a4111d}
+      \strng{authornamehash}{be4bd2cef3adec8777633c33a0a4111d}
+      \strng{authorfullhash}{be4bd2cef3adec8777633c33a0a4111d}
+      \strng{authorfullhashraw}{be4bd2cef3adec8777633c33a0a4111d}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Occasional Papers}
+      \field{title}{Monetary policy under inflation targeting}
+      \field{urlday}{6}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.norges-bank.no/en/news-events/publications/Occasional-Papers/53-monetary-policy/
+      \endverb
+      \verb{url}
+      \verb https://www.norges-bank.no/en/news-events/publications/Occasional-Papers/53-monetary-policy/
+      \endverb
+    \endentry
+    \entry{wacker2024leveraging}{report}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=7442a6f216fa1b53b3a41968191c197a}{%
+           family={Wacker},
+           familyi={W\bibinitperiod},
+           given={Konstantin\bibnamedelima M.},
+           giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6135f669ad8de01a40fe318781d52c1a}{%
+           family={Beyer},
+           familyi={B\bibinitperiod},
+           given={Robert\bibnamedelima C.M.},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=caa14737f536e3319901fa4a112da6ac}{%
+           family={Moller},
+           familyi={M\bibinitperiod},
+           given={Lars\bibnamedelima Christian},
+           giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {World Bank Group}%
+      }
+      \list{location}{1}{%
+        {Washington, D.C.}%
+      }
+      \strng{namehash}{03ab215c87efa30ca2f52dad2a80b6d3}
+      \strng{fullhash}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \strng{fullhashraw}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \strng{bibnamehash}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \strng{authorbibnamehash}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \strng{authornamehash}{03ab215c87efa30ca2f52dad2a80b6d3}
+      \strng{authorfullhash}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \strng{authorfullhashraw}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{number}{WPS10751}
+      \field{title}{Leveraging Growth Regressions for Country Analysis}
+      \field{type}{Policy Research Working Paper}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb http://documents.worldbank.org/curated/en/099217304102412750
+      \endverb
+      \verb{url}
+      \verb http://documents.worldbank.org/curated/en/099217304102412750
+      \endverb
+    \endentry
+  \enddatalist
+  \datalist[entry]{apa/global//global/global/global}
+    \entry{87e157cf-0c39-3c03-80d6-6ece5bed6979}{article}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=8ea1d54fee57ba07b648601ddd77664a}{%
+           family={Blanchard},
+           familyi={B\bibinitperiod},
+           given={Olivier},
+           giveni={O\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=9f86081942834923a86a56e2f4d2a7cd}{%
+           family={Galí},
+           familyi={G\bibinitperiod},
+           given={Jordi},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {[Wiley, Ohio State University Press]}%
+      }
+      \strng{namehash}{c6fb321ce00b9ced28c69658ffdc8405}
+      \strng{fullhash}{c6fb321ce00b9ced28c69658ffdc8405}
+      \strng{fullhashraw}{c6fb321ce00b9ced28c69658ffdc8405}
+      \strng{bibnamehash}{c6fb321ce00b9ced28c69658ffdc8405}
+      \strng{authorbibnamehash}{c6fb321ce00b9ced28c69658ffdc8405}
+      \strng{authornamehash}{c6fb321ce00b9ced28c69658ffdc8405}
+      \strng{authorfullhash}{c6fb321ce00b9ced28c69658ffdc8405}
+      \strng{authorfullhashraw}{c6fb321ce00b9ced28c69658ffdc8405}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Most central banks perceive a trade-off between stabilizing inflation and stabilizing the gap between output and desired output. However, the standard new Keynesian framework implies no such trade-off. In that framework, stabilizing inflation is equivalent to stabilizing the welfare-relevant output gap. In this paper, we argue that this property of the new Keynesian framework, which we call the divine coincidence, is due to a special feature of the model: the absence of nontrivial real imperfections. We focus on one such real imperfection, namely, real wage rigidities. When the baseline new Keynesian model is extended to allow for real wage rigidities, the divine coincidence disappears, and central banks indeed face a trade-off between stabilizing inflation and stabilizing the welfare-relevant output gap. We show that not only does the extended model have more realistic normative implications, but it also has appealing positive properties. In particular, it provides a natural interpretation for the dynamic inflation-unemployment relation found in the data.}
+      \field{issn}{00222879, 15384616}
+      \field{journaltitle}{Journal of Money, Credit and Banking}
+      \field{title}{Real Wage Rigidities and the New Keynesian Model}
+      \field{urlday}{5}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{39}
+      \field{year}{2007}
+      \field{urldateera}{ce}
+      \field{pages}{35\bibrangedash 65}
+      \range{pages}{31}
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/4123055
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/4123055
+      \endverb
+    \endentry
+    \entry{fernald_inklaar_ruzic_2025_productivity_slowdown}{article}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=b29af96d3e827b3e020afbe44042f783}{%
+           family={Fernald},
+           familyi={F\bibinitperiod},
+           given={John},
+           giveni={J\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=4fe796e727c5032c0bce181041e95365}{%
+           family={Inklaar},
+           familyi={I\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=5d2d7ac6c754c84c461773ddf0d472be}{%
+           family={Ruzic},
+           familyi={R\bibinitperiod},
+           given={Dimitrije},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{c8ab77d082b116120952ddbb8cdcffa6}
+      \strng{fullhash}{d1f1d95efd1245068820a9240ec3ae46}
+      \strng{fullhashraw}{d1f1d95efd1245068820a9240ec3ae46}
+      \strng{bibnamehash}{d1f1d95efd1245068820a9240ec3ae46}
+      \strng{authorbibnamehash}{d1f1d95efd1245068820a9240ec3ae46}
+      \strng{authornamehash}{c8ab77d082b116120952ddbb8cdcffa6}
+      \strng{authorfullhash}{d1f1d95efd1245068820a9240ec3ae46}
+      \strng{authorfullhashraw}{d1f1d95efd1245068820a9240ec3ae46}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Review of Income and Wealth}
+      \field{month}{2}
+      \field{number}{1}
+      \field{title}{The Productivity Slowdown in Advanced Economies: Common Shocks or Common Trends?}
+      \field{urlday}{6}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{volume}{71}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \field{pages}{e12690}
+      \range{pages}{-1}
+      \verb{doi}
+      \verb 10.1111/roiw.12690
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1111/roiw.12690
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1111/roiw.12690
+      \endverb
+    \endentry
+    \entry{roisland_sveen_2018_monetary_policy_inflation_targeting}{report}{}{}
+      \name{author}{2}{}{%
+        {{un=0,uniquepart=base,hash=b44bef282993a8888bd2f98494cf77ce}{%
+           family={R{ø}island},
+           familyi={R\bibinitperiod},
+           given={{Ø}istein},
+           giveni={Ø\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=38682c72d78f5c490e49978591dbd956}{%
+           family={Sveen},
+           familyi={S\bibinitperiod},
+           given={Tommy},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {Norges Bank}%
+      }
+      \strng{namehash}{be4bd2cef3adec8777633c33a0a4111d}
+      \strng{fullhash}{be4bd2cef3adec8777633c33a0a4111d}
+      \strng{fullhashraw}{be4bd2cef3adec8777633c33a0a4111d}
+      \strng{bibnamehash}{be4bd2cef3adec8777633c33a0a4111d}
+      \strng{authorbibnamehash}{be4bd2cef3adec8777633c33a0a4111d}
+      \strng{authornamehash}{be4bd2cef3adec8777633c33a0a4111d}
+      \strng{authorfullhash}{be4bd2cef3adec8777633c33a0a4111d}
+      \strng{authorfullhashraw}{be4bd2cef3adec8777633c33a0a4111d}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{series}{Occasional Papers}
+      \field{title}{Monetary policy under inflation targeting}
+      \field{urlday}{6}
+      \field{urlmonth}{2}
+      \field{urlyear}{2026}
+      \field{year}{2018}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.norges-bank.no/en/news-events/publications/Occasional-Papers/53-monetary-policy/
+      \endverb
+      \verb{url}
+      \verb https://www.norges-bank.no/en/news-events/publications/Occasional-Papers/53-monetary-policy/
+      \endverb
+    \endentry
+    \entry{wacker2024leveraging}{report}{}{}
+      \name{author}{3}{}{%
+        {{un=0,uniquepart=base,hash=7442a6f216fa1b53b3a41968191c197a}{%
+           family={Wacker},
+           familyi={W\bibinitperiod},
+           given={Konstantin\bibnamedelima M.},
+           giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=6135f669ad8de01a40fe318781d52c1a}{%
+           family={Beyer},
+           familyi={B\bibinitperiod},
+           given={Robert\bibnamedelima C.M.},
+           giveni={R\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+        {{un=0,uniquepart=base,hash=caa14737f536e3319901fa4a112da6ac}{%
+           family={Moller},
+           familyi={M\bibinitperiod},
+           given={Lars\bibnamedelima Christian},
+           giveni={L\bibinitperiod\bibinitdelim C\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{institution}{1}{%
+        {World Bank Group}%
+      }
+      \list{location}{1}{%
+        {Washington, D.C.}%
+      }
+      \strng{namehash}{03ab215c87efa30ca2f52dad2a80b6d3}
+      \strng{fullhash}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \strng{fullhashraw}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \strng{bibnamehash}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \strng{authorbibnamehash}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \strng{authornamehash}{03ab215c87efa30ca2f52dad2a80b6d3}
+      \strng{authorfullhash}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \strng{authorfullhashraw}{8117c03fc15e41fd6c7b232a35d53ceb}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{}
+      \true{uniqueprimaryauthor}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{4}
+      \field{number}{WPS10751}
+      \field{title}{Leveraging Growth Regressions for Country Analysis}
+      \field{type}{Policy Research Working Paper}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb http://documents.worldbank.org/curated/en/099217304102412750
+      \endverb
+      \verb{url}
+      \verb http://documents.worldbank.org/curated/en/099217304102412750
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
