@@ -1,0 +1,1691 @@
+Policy Research Working Paper                                     10751
+
+
+
+
+            Leveraging Growth Regressions
+                 for Country Analysis
+                             Konstantin M. Wacker
+                              Robert C.M. Beyer
+                             Lars Christian Moller
+
+
+
+
+Macroeconomics, Trade and Investment                 A verified reproducibility package for this paper is
+Global Practice                                      available at http://reproducibility.worldbank.org,
+April 2024                                           click here for direct access.
+Policy Research Working Paper 10751
+
+
+  Abstract
+ This paper shows how growth regressions can be useful for                                introduces a new data set of growth correlates spanning
+ analyzing a country’s growth performance. Growth regres-                                 more than 150 countries from 1970 to 2019. Addition-
+ sions describe changes in key macroeconomic variables that                               ally, it presents several econometric reference models and
+ countries typically experience during their growth process.                              details their application for country-level growth analysis.
+ Such partial correlations facilitate comparative analysis, can                           Two distinct metrics highlight infrastructure and human
+ usually be linked to policies, and can hence be informative                              capital as exhibiting the strongest correlations with growth.
+ from a policy perspective. Against this background, the paper
+
+
+
+
+ This paper is a product of the Macroeconomics, Trade and Investment Global Practice. It is part of a larger effort by the
+ World Bank to provide open access to its research and make a contribution to development policy discussions around the
+ world. Policy Research Working Papers are also posted on the Web at http://www.worldbank.org/prwp. The authors may
+ be contacted at k.m.wacker@rug.nl, RBeyer@imf.org, and lmoller@worldbank.org. A verified reproducibility package for
+ this paper is available at http://reproducibility.worldbank.org, click here for direct access.
+
+
+
+
+                                                                                         RESEA
+                                                                                    CY
+                                                                               LI                R
+                                                                                                 CH
+                                                                          PO
+
+
+
+
+                                                                    TRANSPARENT
+                                                                                ANALYSIS
+                                                                                                     S
+                                                                           W
+
+
+
+
+                                                                                                 R
+
+
+
+
+                                                                               R                     E
+                                                                            O
+
+
+
+
+                                                                                    KI           P
+                                                                                         NG PA
+
+
+
+
+         The Policy Research Working Paper Series disseminates the findings of work in progress to encourage the exchange of ideas about development
+         issues. An objective of the series is to get the findings out quickly, even if the presentations are less than fully polished. The papers carry the
+         names of the authors and should be cited accordingly. The findings, interpretations, and conclusions expressed in this paper are entirely those
+         of the authors. They do not necessarily represent the views of the International Bank for Reconstruction and Development/World Bank and
+         its affiliated organizations, or those of the Executive Directors of the World Bank or the governments they represent.
+
+
+                                                       Produced by the Research Support Team
+Leveraging Growth Regressions for Country Analysis *
+
+Konstantin M. Wacker, University of Groningen, k.m.wacker@rug.nl
+
+Robert C.M. Beyer, International Monetary Fund, RBeyer@imf.org
+
+Lars Christian Moller, World Bank, lmoller@worldbank.org
+
+
+
+
+JEL Classifications: O47, C5
+
+Keywords: economic growth, growth regressions, growth econometrics, comparative
+
+country analysis, economic policy
+
+
+
+
+This paper is a product of the Macroeconomics, Trade and Investment Global Practice.
+It is part of a larger effort by the World Bank to provide open access to its research and
+make a contribution to development policy discussions around the world. Policy
+Research        Working       Papers    are   also     posted    on     the     Web      at
+http://www.worldbank.org/prwp. The             author(s) may        be     contacted at
+k.m.wacker@rug.nl, RBeyer@imf.org, lmoller@worldbank.org.
+* Corresponding author: K.M. Wacker. The authors would like to thank Alice Brooks, Fisea Haile, Aart
+
+Kraay, Lazar Milivojevic, and Frederico Gil Sander for helpful comments on earlier versions of this paper.
+Eline Koopman provided excellent research assistance.
+1. Introduction
+
+Economic growth continues to be a key driver of living conditions. It is the main driver of recent
+poverty reductions and shows a near one-to-one relationship with important welfare indicators
+for most countries (Dollar et al., 2015 and 2016; Crespo Cuaresma et al., 2022). It is hence not
+surprising that policy makers set ambitious growth targets, other societal challenges
+notwithstanding. Applied research can facilitate such growth agendas by providing insights into
+country-specific growth episodes.
+Economists use several methods to investigate country-level growth performances. For example,
+filtering techniques allow separating cyclical shocks from long-term growth that is in line with
+an economy’s underlying potential (Hodrick and Prescott, 1981). Growth accounting
+decomposes growth into contributions from production factors, like capital and labor, and
+productivity growth (Hulten, 2010). Other decomposition techniques are widely used to
+investigate to what extent productivity improvements are due to structural change, e.g., workers
+moving to more productive sectors (Timmer and de Vries, 2009; McMillan et al., 2014) or firm
+dynamics (Brown et al., 2018; Diao et al., 2021). Most of those methods are part of a standard
+toolkit to analyze country-level growth performance and, for example, part of the World Bank
+growth diagnostics guidelines (CEM 2.0).
+However, most of those country-specific methods leave critically important policy questions
+unanswered. Notably, the above-mentioned filtering and decomposition techniques rarely tell us
+anything about underlying policy drivers, let alone their relative importance. 1 Moreover, studies
+of firm dynamics are mostly limited to the formal manufacturing sector. What happens in other
+parts of the economy usually remains unclear.
+In this paper, we make the case that growth regressions can provide policy-relevant insights into
+a country’s growth performance, even if they only provide descriptive correlations. Such
+correlations tell what policy-relevant changes in key macroeconomic variables countries
+typically experience in their growth process. This allows for a quantitative assessment of how
+special or representative the policy mix of a country’s growth performance is. For example, if
+typical growth correlates can explain a country’s growth performance well, this suggests that
+key macroeconomic variables move in line with the experience of other growing economies.
+Even in this case, the policy mix of this country may still be unique (see the Ethiopia case study
+in Moller and Wacker, 2017). Conversely, if typical growth correlates cannot explain a country’s
+performance well, this can be insightful in its own way. Can we learn something new for growth
+theory from this country? Or has the country just had “good luck”? Obtaining quantitative
+assessments of successful policy mixes is particularly useful today as growth policies may face
+trade-offs with climate goals (Haberl et al., 2020; Wollburg et al., 2023).
+To facilitate the application of growth regressions, our contribution makes them readily
+available. In this paper we present a novel comprehensive data set and reference models. Our
+dataset contains about 20 variables for approximately 150 countries between 1970 and 2019 in
+non-overlapping 5-year averages. It largely builds upon previous work of Araujo et al. (2016)
+and Beyer and Wacker (2023) and their methodology but adds several climate-relevant and
+demographic variables, including income inequality. Our data and codes for estimation and
+analysis are available through the GitHub repository KMWacker/growthdata and provide a rich
+open data source to researchers and economic policy analysts. 2
+While our paper focuses on the application of growth regressions for country analysis, it seems
+
+1 For example, McMillan et al. (2014) suggest that undervaluation and labor market flexibility promote
+productivity-enhancing structural change. But devaluation may make capital accumulation more expensive,
+and deregulation may deter labor market participation. This factor-reducing effect and associated policy
+tradeoffs would not be accounted for.
+2 We plan to regularly update and expand the data set and invite scholars and analysts to comment on the
+
+code and suggest improvements; either by contacting the corresponding author or by push requests on
+GitHub.
+
+
+
+
+                                                 -2-
+natural to ask for the most important correlates of growth across countries. To assess this issue,
+we provide standardized beta coefficients and a variance decomposition for our novel data set.
+Both reaffirm that economic growth is usually tightly related to infrastructure developments.
+The variable in our dataset that explains variation in income across countries the best is human
+capital. This may be surprising because education variables are often statistically insignificant
+in growth regressions. Our result suggests that this statistical insignificance, possibly driven by
+measurement problems, should not lead to a premature neglect of education from a growth-
+policy perspective.
+The remainder of this paper is structured as follows: Section 2 gives an overview of what has
+happened in growth econometrics since its heyday in the early 1990s and highlights an
+increasing shift towards descriptive country analysis. In section 3, we provide a short
+introduction to growth regressions. Particularly, we discuss the neoclassical growth model, its
+dynamic implications, and parameter estimation. Section 4 discusses the variables included in
+our dataset. Specifically, we describe the construction and sources of those variables, and
+motivate their inclusion with reference to the previous literature. Section 5 presents and
+discusses our regression results, including a series of alternative estimation approaches and
+robustness checks. In Section 6, we illustrate how our model can be used to analyze country-
+specific growth patterns, using the period 2000-2009 in Bangladesh as an example, and
+discusses additional practical aspects, such as extending the analysis to more recent periods or
+dealing with poor predictive performance of the model for individual countries. Section 7
+concludes the paper by discussing potential extensions and future developments and putting
+some key results into a broader perspective.
+
+
+
+
+2. The Case for Growth Regressions for Comparative Analysis
+
+Growth regressions experienced their heyday in the 1990s, starting with seminal contributions
+by Barro (1991), Mankiw, Romer, and Weil (1992), and Sachs and Warner (1997). Those
+contributions quickly led to econometric debates about the robustness of growth correlates
+(Levine and Renelt, 1992; and Sala-i-Martin, 1997) and regional peculiarities (Islam 1995). 3
+Over time, researchers increasingly discussed different estimation strategies (e.g., Hauk and
+Wacziarg, 2009; Bazzi and Clemens, 2013; Kraay, 2015) and econometric concepts such as
+model uncertainty (e.g., Fernández et al., 2001) and parameter heterogeneity (e.g., Feng et al.,
+2022) in application to growth regressions. This was facilitated by broad agreement on the
+theoretical framework (i.e., the neoclassical Solow model) and the availability of consistent
+macroeconomic data. 4
+Most scholars meanwhile acknowledge challenges with respect to causal identification in
+growth regressions. 5 Dollar et al. (2015), for example, treat estimates from growth regressions
+as “estimated partial correlations rather than causal effects”. From a statistical perspective,
+randomized control trials, regression discontinuity approaches, or natural experiments provide
+much cleaner identification strategies to infer causal effects of specific policies such as public
+education interventions, microfinance, tax policies, or the effects of infrastructure projects. But
+they are usually focused on one policy (or event) in one country, instead of a policy mix, and
+their external validity is frequently questioned.
+
+
+3 Durlauf et al. (2005) provide an overview of the vivid developments of that time.
+4 See Johnson, Papageorgiou, and Subramanian (2013) for measurement problems in growth empirics and
+Inklaar et al. (2022) for inconsistencies in price comparisons.
+5 Nevertheless, growth regressions are still widely used to address topical macroeconomic questions such
+
+as the role of inequality, globalization, or structural reforms for growth (e.g., Berg et al., 2018; Brueckner
+and Ledermann, 2018; Cai et al., 2018; de Haan and Wiese, 2022; Boikos et al., 2022).
+
+
+
+
+                                                    -3-
+Although growth regressions cannot substitute for causal identification of growth policies, they
+can still be useful for comparative country analysis. 6 Early attempts to use growth regressions
+in a policy context originated from two companion studies at the World Bank for Latin America
+and Chile, respectively (Loayza et al., 2005; Gallego and Loayza, 2002). Although those studies
+still followed a causal interpretation, they used their estimated drivers of growth to gauge the
+relative importance of domestic policies compared to external factors, which highlighted the
+benefit of growth regressions for policy analysis. Moreover, they illustrated how those estimates
+can be used to assess the role of policy complementarities, an approach that was furthered by
+Chang et al. (2009).
+Araujo et al. (2016) revived this policy-driven approach when they studied whether a period of
+catch-up growth in the early 2000s in Latin America and the Caribbean (LAC) was driven by
+‘good policies’ or ‘good luck’ from high commodity prices. Other analyses built on Araujo et al
+(2016) to explore country- and region-specific growth episodes. For example, results from Haile
+and Moller (2018) pointed to the importance of financial deepening, macro policy, and
+infrastructure for previously poorly understood growth accelerations in the West African
+Economic and Monetary Union (WAEMU). Geiger et al. (2019) revealed that typical growth
+correlates explain the exceptional growth performance of Ghana up to 2010 but not afterwards.
+They interpret this as an abatement of structural improvements in the economy and an
+increasingly cyclical growth performance. 7
+Moller and Wacker (2017) illustrated how growth regressions can provide a solid underpinning
+for understanding a country’s macroeconomic policy mix. They confirmed that typical correlates
+of growth can explain Ethiopia’s decade-long growth acceleration after 2003. They then showed
+that what made Ethiopia exceptional was its outstanding performance in essential growth
+correlates, notably infrastructure, and its heterodox macroeconomic policy mix. Analyzing
+typical correlation patterns with a cluster analysis, they showed that Ethiopia benefitted from a
+unique combination of overvalued exchange rates and financial repression that facilitated
+infrastructure spending.
+Similarly, Beyer and Wacker (2023) built on growth regressions to explain decades of solid
+growth in Bangladesh. By putting growth correlates into a comparative perspective, they showed
+that Bangladesh’s improvements in growth correlates between 1990 and 2004 were in the global
+top 5 percent for any 15-year period since 1970. Further comparing Bangladesh to other
+countries with periods of rapid improvements in key macroeconomic variables, they showed
+that Bangladesh does not show the typical pattern of mean-reversion in growth rates, which they
+attributed to outstanding macroeconomic stability.
+This paper builds on the above-mentioned country studies from Latin America, Africa, and
+South Asia. Specifically, we provide a dataset that is comparable to the data employed in the
+above studies but can be freely accessed through the GitHub repository KMWacker/growthdata.
+We further discuss the methods that are needed for such country analysis on a more conceptual
+level.
+
+
+
+
+6
+  In our view, growth regressions additionally provide a useful cross-check for causal
+identification approaches. E.g., if education and microfinance interventions improve incomes at
+the micro level, should we not also check for reasonable correlations of education and financial
+development with income at a highly aggregated macro level before rolling out large-scale
+programs?
+7
+  Ghana’s debt default in 2022 suggests they had a point.
+
+
+
+
+                                              -4-
+3. A Short Overview of Growth Regressions
+
+In this section, we discuss the modern econometric foundation of the neoclassical growth model
+(Solow, 1956; Swan, 1956). To facilitate growth analysis, we particularly highlight how a
+change in income (i.e., growth) is related to levels of income in this model.
+
+
+3.1 The Neoclassical Growth Model and Its Implications
+The standard approach in the empirical growth literature is to model the logarithm of a country
+c’s per capita income level at period t, ln yct, as a function of growth correlates, xk,ct (k=1,…,K),
+and the lagged income level, ln yc,t-1 (e.g. Araujo et al., 2016; Moller and Wacker, 2017;
+Brueckner and Lederman, 2018):
+                    ln������������������������������������ = ������������ln������������������������,������������−1 + ������������1 ������������1,������������������������ + ⋯ + ������������������������ ������������������������,������������������������ + ������������������������ + ������������������������ + ������������������������������������ . (1)
+This equation includes an autoregressive term ln yc,t-1 (‘lagged dependent variable’) that
+determines the dynamics of the model (more on this below), country fixed effects αc, which
+account for (time-invariant) unobserved differences in income levels across countries, and
+period fixed effects ������������������������ , which account for global shocks to income levels (e.g., during the global
+financial crisis).
+To see why (1) is actually a “growth” model, one can calculate changes over time (‘first
+differencing’):
+               ∆ ln������������������������������������
+               ���                                   = ������������
+                                                       ��   ∆ ln��������������������������
+                                                             ���        ,������������−1
+                                                                                + ���������������
+                                                                                  ������������1 ∆������������1,������������������������ + ⋯ + ������������������������ ∆������������������������,������������������������ + ∆������������
+                                                                                                                                            ��   ������������ + ∆������������
+                                                                                                                                                ���     ��    ������������������������ , (2)
+    ������������������������������������������������������������������������ ������������������������������������������������������������ℎ          ������������������������������������������������������������������������������������������������������������������������������������   ������������ℎ������������������������������������������������������������ ������������������������ ������������������������������������������������������������ℎ ������������������������������������������������������������������������������������������������������������������������   ������������������������������������������������������������������������������������������������
+
+where Δ is the difference operator: Δxt=xt-xt-1. Note that log-changes approximate percent
+changes such that equation (2) has percent growth rates on the left-hand side and is hence a
+‘growth equation’. Country fixed effects are ‘differenced away’ in equation (2) since they are
+time-invariant. Importantly, the other central model parameters θ, β1, …, βK are mathematically
+equivalent in equations (1) and (2). 8 Because growth can be rather volatile over time (e.g.,
+Easterly et al., 1993; Pritchett and Summers, 2015), estimation of the model in levels usually
+provides more reliable estimates of those parameters, which can then be applied to the analysis
+of growth in the first-difference equation (2).
+
+
+Dynamic Implication of the Model
+Equations (1) and (2) imply that a change in a growth correlate xk is associated with a permanent
+change of the income level but a temporary change of the growth rate. A change in xk, Δxk, in
+period t and country c will have a contemporaneous correlation βk with the growth rate of that
+country. Since this growth rate, Δlnyt, will be the lagged growth rate in the next period t+1, the
+relationship shows some ‘autoregressive’ persistence θ over time. However, if θ<1, which is
+usually the case, this association fades out over time. This is economically intuitive: if a country
+implements an infrastructure project today, it will boost growth and the income level. Some
+positive relationship with growth may still be present in the next period, but it will fade out over
+time. 9 Equation (2) further implies that the growth association of a change of xk in period t+j
+will be equal to θjβk. Over an infinitely long time horizon, this effect converges to βk/(1-θ), such
+
+8 In practice, estimates of those parameters will differ between estimation with fixed effects (equation 1)
+
+or in first differences (equation 2), but they are asymptotically equal. This equivalence is used to estimate
+the “growth equation” in levels (equation 1), which usually provides more efficient results.
+9 This differs from dynamic implications of endogenous growth models, where, for example, education
+
+and research or institutional changes can have a permanent effect on the growth rate (by speeding up
+technological progress).
+
+
+
+
+                                                                                                                        -5-
+that the short-run effect of a change in xk on income levels, ∂lnyt/∂xk,t, equals βk, while the long-
+run effect is given as:
+                           ������������ln������������������������+������������                                                                                                ������������������������
+                                                  = ������������������������ + ������������������������������������ + ������������ 2 ������������������������ + ������������ 3 ������������������������ + ⋯ +������������ ������������ ������������������������ ���              .   (3)
+                              ������������������������������������,������������                                                                                    ������������→∞ (1−������������ )
+
+Section 6.7 provides an illustration of this dynamic relationship.
+
+
+Convergence Implications
+In the presence of country fixed effects, the lagged dependent variable governs a country’s
+convergence towards its own steady-state. 10 It does not say anything about cross-country
+convergence. Conversely, in a cross-country regression setup with no country fixed effects, the
+coefficient θ governs “beta convergence” across countries. In such a cross-country context, (θ-
+1)<0 implies that an economy with a lower initial income level grows faster than an economy
+with a higher initial income level. Patel et al. (2021) provide comprehensive evidence on such
+cross-country convergence patterns that can in principle also be analyzed with our dataset.
+
+
+
+3.2 Estimation of the Parameters θ and β
+It is common to estimate the parameters of the above growth model in the levels equation (1)
+and to include country and period fixed effects. More specifically, we apply a least-square
+dummy variable estimator to equation (1) for our baseline estimation. We also follow the
+convention to work with periods t representing non-overlapping 5-year averages to smooth out
+cyclical variation in the data. 11
+Least-square estimation will provide partial correlations, not causal effects of growth
+determinants. This is due to the presence of various sources of endogeneity, such as omitted
+variables, reverse causality, heterogeneity, or measurement error. 12 For example, it is not clear
+to what extent infrastructure causes growth and to what extent a higher income level causes a
+higher level of infrastructure. The results of such least-square estimation are hence partial
+correlations, indicating the extent to which income levels and right-hand-side variables are
+correlated with each other. Or, in the context of equation (2): how much changes in variables x
+are correlated with economic growth. As discussed above, such a descriptive exercise can still
+be useful from a policy perspective.
+Online Appendix A.4 additionally provides results from System-GMM estimation and discusses
+the peculiar problems that come with this estimation approach, including weak identification
+and associated susceptibility to instrument specification choice. Accordingly, we consider those
+estimates too arbitrary to serve as a baseline and rather treat them as a crude cross-check.
+Additionally, we check for parameter heterogeneity across country groups in subsection 5.3.
+
+
+
+
+10 This can be seen after subtracting lnyc,t-1 from both sides of equation (1), which yields:
+∆ln������������������������������������ = (������������ − 1)ln������������������������,������������−1 + ������������1 ������������1,������������������������ + ⋯ + ������������������������ ������������������������,������������������������ + ������������������������ + ������������������������ + ������������������������������������ . A random shock εc,t-1 that is not
+driven by any fundamental growth correlates x will impact lnyc,t-1 but since (θ-1)<0, it will revert in the
+next period. The economy converges back towards its steady state, as the neoclassical Solow model implies.
+11 Additionally, the conventional GMM moment condition of serially uncorrelated shocks is more likely
+to be ensured in 5-year averages than in annual data.
+12 A particular case of endogeneity arises for the autoregressive coefficient of the lagged dependent variable,
+
+which is downward biased by construction in fixed effect models (“Nickell bias”). Since we are not
+particularly interested in this particular coefficient, we accept this bias in our baseline least squares
+estimation and note that it could be analytically corrected (Kiviet, 1995) and is addressed in our System-
+GMM estimates in Online Appendix A.4.
+
+
+
+
+                                                                                               -6-
+4. Variables and Data Sources
+
+Our dataset has a panel structure (repeated observations for each country); ‘geo’ and ‘period’
+are the variables that identify country and time, respectively. The former is an encoded variable:
+it ranges from 2 (Albania) to 208 (Zimbabwe) but STATA displays country names instead of
+numbers. Our dataset additionally contains a ‘country’ and ‘NAMES_STD’ variable 13 and their
+‘iso3’ code as a string variable. Additionally, ‘region_un’ classifies each country’s region, based
+on UN standards.
+The ‘period’ variable indicates 5-year average periods, where period 1 encompasses the 1970-
+1974 data, while period 10 contains the 2015-2019 data. Note that the inclusion of those time-
+fixed effects accounts for all global factors that affect all countries equally (in proportionate
+terms, as the dependent variable is logged). They could reflect global commodity prices or the
+global interest rate environment, or global advances in technology. 14
+
+
+
+4.1 Income Level
+The dependent variable we aim to explain is lrgdpna_pc, the real (inflation-corrected) income
+level per capita, in logarithmic terms. The variable is based on PWT10.0 and constructed by
+dividing the series rgdpna by pop. The natural log is taken so that changes in the explanatory
+variables can be interpreted as percent changes in per capita income levels.
+Although national income data are converted into (constant 2017) US$, note that this variable
+does not allow for proper comparison of welfare across countries because it does not account
+for differences in price levels across countries. If goods are half the price in one country
+compared to others, half the income level (in US$) is needed for the same consumption welfare.
+Such comparisons are facilitated through PPP adjustments, as in the PWT series rgdpo or rgdpe
+(Feenstra et al., 2015), which are also contained in our data set. PPP adjustments, however, can
+cause short-term country-specific fluctuations in the PPP-income variable (Inklaar et al., 2022),
+which can distort analysis of country-specific growth contributions.
+Our model and results based on lrgdpna_pc still have a proper welfare interpretation because
+they control for cross-fixed effects and hence differences in price levels across countries. But
+for cross-country comparison of welfare levels or analyses without country fixed effects, we
+recommend the variables lrgdpe_pc (or lrgdpo_pc), which are also contained in our data set.
+
+
+4.2 Correlates of Growth
+In table 1, we provide an overview of variables contained in our dataset and models. Variables
+are ordered by their availability: variables in the “small model” are widely available, hence
+allowing for a sample of approximately 1,500 observations (168 countries). The “small model”
+hence has the broadest coverage and should therefore provide most precise parameter estimates.
+However, it does not contain some potentially relevant variables that previous research has
+found to correlate with growth but which are only available for fewer countries. We hence
+include those additional variables in a separate “medium” and “large” model. For those models,
+the sample decreases to 967 (149 countries) and 635 observations (128 countries), respectively.
+The variables, their construction, and rationale for inclusion are discussed below the table. While
+the table focuses on variables we include in different model variants, the text also highlights
+alternative variables included in the data set, where available.
+
+
+13The NAMES_STD is a standardized country identification from STATA’s ‘kountry’ ado command.
+14Some of the mentioned factors may impact country groups differently (e.g., commodity prices for
+importers vs. exporters). It is possible to interact the period dummies with dummies for country groups
+(by region, income level, commodity dependence etc.) if one is interested in this aspect.
+
+
+
+
+                                                  -7-
+Variables in the “Small Model” (Largest Availability)
+Inflation is measured as the log change of v_c/q_c (household consumption at current national
+prices / household consumption at constant national 2017 prices) from the national account
+module of PWT10.0, which has larger availability than inflation data from WDI. We add 1 to
+this variable to avoid negative numbers and then take logs to obtain linflation_na. 15
+The real exchange rate, lrer, is calculated as the log of the GDP price level (at purchasing
+power parity) over the nominal exchange rate: pl_gdpo/xr, both taken from PWT10.0. Since xr
+is measured as national currency/US$, an increase in lrer reflects a real appreciation, which is
+expected to negatively affect output and growth through various channels (e.g., Rapetti, 2019;
+Levy-Yeyati et al., 2013). We also calculate (absolute) deviations of the real exchange rate from
+a HP-filtered trend, mad_lrer_deviation, which is included in the data set as alternative, but not
+included in our models.
+Trade openness is conventionally captured as the sum of exports and imports over GDP. To
+account for higher trade shares of smaller countries and higher trade in times of higher demand
+from abroad, irrespective of trade policies, we calculate a trade_resid as the residual of a
+regression of exports and imports over GDP on log of exporter population and global GDP,
+which acts as demand shifter. We then take the log of that residual which first requires
+transformation to positive values. This is done as: ltraderesid = ln(trade_resid-
+min(trade_resid)+0.01). All respective variables are taken from PWT10.0.
+Infrastructure is captured by an index, as often is the case in the literature (surveyed in Välilä,
+2020). We therefore combine information on phone lines, mobile phones, internet coverage,
+availability of secure internet connections, and access to electricity from WDI. Since they have
+different sample coverage, we use the most available series (phone lines) to predict missing
+values of the second-most available (mobile phones), use those to predict missing values in the
+next series, etc. Each of those five updated infrastructure series is then Pearson standardized
+(i.e., transformed to mean 0 and standard deviation 1). Their weights in the final infrastructure
+index are the number of available original observations at each year, divided by the total number
+of original observations from all five series in the same year.
+
+
+
+
+15This shift transformation is consistent with the earlier approach in Araujo et al. (2016) and most common
+in the literature. We are aware of potential problems and that there are possible alternatives which
+researchers are free to explore using our data set. See also Karakaplan et al. (2020).
+
+
+
+
+                                                   -8-
+                                                     Table 1: Summary statistics
+Label            Short description                                              Source                     Mean    SD     #Obs
+
+Panel identifiers
+geo              Country identifier
+
+period           Period identifier
+
+
+Dependent variable
+                 Log of GDP p.c. (in constant 2017 US$)                         PWT10.0
+lrgdpna_pc                                                                                                 8.94    1.25   1,556
+
+Small model
+                 Log of (inflation+1)                                           PWT10.0
+linflation_na                                                                                              0.09    0.14   1,556
+                 Log of real exchange rate                                      PWT10.0
+lrer                                                                                                       -2.87   4.16   1,556
+                 Log trade openness (corrected for population and global GDP)   PWT10.0
+ltraderesid                                                                                                0.34    0.54   1,556
+                 Infrastructure index                                           WDI
+infra_index                                                                                                0.18    0.85   1,525
+                 Dummy for financial crisis                                     Laeven & Valencia (2020)
+dum_fincrisis                                                                                              0.22    0.42   1,556
+                 Standard deviation of monthly temperature levels               WBCCKP
+sd_temperature                                                                                             4.04    3.16   1,537
+                 Log changes in the terms of trade                              WDI
+dltot                                                                                                      0.01    0.12   1,556
+                 Log of (government consumption / GDP)                          PWT10.0
+lkg                                                                                                        -1.76   0.51   1,556
+                 Standard deviation of growth rate                              PWT10.0
+sd_growth                                                                                                  0.04    0.04   1,556
+                 Change in the share of urban population                        WDI
+durbanpop                                                                                                  1.95    2.07   1,556
+                                                           [continued on next page]
+
+
+
+
+                                                                     -9-
+Label            Short description                                                  Source          Mean      SD    #Obs
+
+Medium model
+lcredit          Log (domestic credit to private sector as % of GDP)                WDI
+                                                                                                    3.29    1.04    1,162
+lFDIstock_ipol   Log (inward FDI stock as a percentage of GDP)                      UNCTAD
+                                                                                                    2.73    1.52    1,480
+lEDI_ipol        Theil index for export diversification                             IMF & UNCTAD
+                                                                                                    1.19    0.38    1,493
+lEDI_ipol_sq     Squared Theil index for export diversification                     IMF & UNCTAD
+                                                                                                    1.55    0.85    1,493
+actotal          Political violence (magnitude of major events)                     Systemicpeace
+                                                                                                    0.75    1.73    1,389
+
+Large model
+lhc              Log of human capital index                                         PWT10.0
+                                                                                                    0.72    0.35     1,329
+dgini            Change in the Gini coefficient of market incomes                   SWIID
+                                                                                                    0.18    1.17     940
+
+Additional variables available in the data set
+emprate          Employment-to-population rate                                      PWT10.0
+                                                                                                    0.39    0.09     1,491
+agri_valadded    Agriculture,    forestry,    and    fishing,     value     added   WDI
+                 (% of GDP)                                                                         15.29   13.77    1,299
+remittances      Personal remittances, received (% of GDP)                          WDI
+                                                                                                    3.66    10.31    1,196
+
+
+
+
+                                                                          -10-
+To illustrate this weighting, consider a case where 150 original observations for log phone lines were
+available in 1970, and 50 observations were available for electricity. We attribute a weight 3/4 to the
+former and the latter gets a weight 1/4, while the remaining three infrastructure variables are not part
+of the composite index in 1970. This weighting reflects two aspects: statistical reliability and
+economic relevance. Fewer observations of a variable for a given year mean more predicted values
+for that variable, which are less reliable than the original observations. Statistically, one hence wants
+to attribute less weight to this ‘less reliable’ series. Fewer observations also reflect less relevance of
+the indicator. Secure internet connections or mobile phones were simply not available or not as
+important in the 1970s, their availability was hence not recorded in the data. This constitutes an
+economic reason for attributing less weight to series with fewer original observations.
+Alternatively, our data also allows using those series individually (in logs), where lphone has the
+largest coverage.
+To include variables for financial crises, we rely on the database from Laeven and Valencia (2020),
+which have coverage until 2017. Our dataset contains dummy variables for individual years of
+banking, currency, or sovereign debt crises and a dummy variable, dum_fincrisis, if either of those
+crises is reported. Alternatively, the variable fincrisis_years captures the number of years with some
+financial crisis during a 5-year period (with a maximum of 3).
+Climate change can affect economic activity through various channels (see e.g., Acevedo et al.,
+2020). We take data from the World Bank’s Climate Change Knowledge portal on historical monthly
+temperatures by country and calculate their standard deviation over a 5-year period, sd_temperature.
+Alternatively, mean temperatures, temperaturecelsius, are available in the data set as well. Both have
+shown to be negatively correlated with economic growth in the past (e.g., Burke et al., 2015; Kotz
+et al., 2021) but external validity about future causal impact of climate change is difficult to establish,
+due to non-linearities and the fact that countries are differently affected by global warming (e.g.,
+Ortiz-Bobea et al., 2021).
+Our dataset further includes the variables disaster_aff and disaster_death, which capture the number
+of people affected by or deceased from natural disasters, respectively, per million inhabitants. The
+data come from the Emergency Events Database (EM-DAT). 16 Since GDP does not take destruction
+into account and disasters are usually followed by reconstruction, which boosts GDP, the negative
+economic consequences of natural disasters are usually not captured in cross-country growth
+regressions. We therefore do not include those variables in our regression models.
+To account for positive and negative shocks due to changes in international price levels, we include
+terms of trade changes, dltot, calculated as changes in the log of the export price level relative to
+the import price level (pl_x/pl_m), both taken from PWT10.0.
+We further include the log of government consumption as a share of GDP, lkg, calculated as the
+log of csh_g from PWT10.0, into our model. This variable is supposed to capture growth-reducing
+effects through either distortionary taxation (Afonso and Furceri, 2010), or public debt issuance.
+Note that the negative association with growth is motivated by the fact that we already control for
+the positive effects that government consumption may have on growth, e.g., through education or
+infrastructure spending. As our model describes long-run growth, it is also important not to conflate
+the short-term positive stimulus effect that increased government consumption can have during
+economic downturns. For similar reasons we also do not include fiscal deficit variables, which are
+highly cyclical and hence tend to smoothen out over 5-year averages.
+Since growth volatility can negatively impact long-term growth (e.g., Ramey und Ramey, 1995;
+Hnatkovska and Loayza, 2005), our data set includes the standard deviation of annual growth rates
+over a 5-year period. This variable is endogenous by construction, which calls for more advanced
+
+16 Due to copyright restrictions concerning republishability, those data are not directly included in our dataset
+
+and need to be manually added; see lines 435ff of 0_WBPRWP_datacr.do in our GitHub directory.
+
+
+
+
+                                                     -11-
+estimation approaches if one is interested in investigating this link. To somewhat mitigate this
+problem in our data, we lag growth rates by two years (e.g., the 5-year period 1990-1994 includes
+the standard deviation of growth rates between 1987-1988 and 1991-1992).
+Our data further contains changes in the share of urban population of the total population,
+durbanpop, from WDI. We include this variable in differences as we think that fast urbanization
+periods are correlated with growth spells. Our dataset further contains population density, popdens,
+from WDI.
+
+
+
+Variables in the “Medium Model”
+To measure countries’ financial development, we use the log of domestic credit to the private sector
+as a percentage of GDP, lcredit, taken from WDI. The literature on financial development and its
+relationship to growth has grown extensively over the last decades (e.g., Levine, 2005; Arcand et al.,
+2015) and various studies and data sets on more detailed aspects of the issue have appeared (e.g.,
+Svirydzenka, 2016). Credit over GDP, however, has the clear advantage of wide availability across
+countries and over time and has been used by several seminal studies in the literature on finance and
+growth. Brunnermeier et al. (2021) also confirm that credit expansion is rather a sign of financial
+deepening than the prelude for financial busts.
+Foreign direct investment acts as a proxy for the activity of multinational corporations (Casella et
+al., 2023). We take the inward FDI stock as a percentage of GDP from UNCTAD. Since no stock
+data are reported before 1980, we fill the missing decade of data with an interpolation from FDI
+flow data (as a percentage of gross fixed capital formation). The sample correlation of both variables
+is high, 0.87. The variable is logged and labeled lFDIstock_ip.
+For export diversification, we rely on the export diversification index of the IMF (Papageorgiou et
+al., 2015), which is a Theil index. A higher value hence indicates lower diversification. Since this
+index stops in 2014, we interpolate the missing years with the Herfindahl-Hirschmann Product Index
+from UNCTAD. The correlation between both series in the sample is high, 0.90. The variable is
+logged and labeled lEDI_ipol. Moreover, we take the square of the variable because a non-linear or
+U-shaped relationship is expected (see Imbs and Wazciarg, 2003, and Papageorgiou et al., 2015: Fig.
+3).
+Institutions are widely acknowledged as a key ultimate source of cross-country income differences
+(e.g., Acemoglu et al., 2001; 2005). However, their measurement problems have also been
+highlighted (e.g., Glaeser et al., 2004; Voigt, 2013) and deep institutional aspects barely vary over
+time, which is the key dimension we use for identification of our model parameters (due to the
+presence of country fixed effects). Moreover, most common measures of institutional quality are not
+available for the whole sample we aim to investigate. Instead of using a fine measure of institutional
+quality, we hence rely on data about major episodes of political violence from Systemicpeace.org.,
+which has the advantages of wide coverage and considerable variation over time. In the regression
+models, we rely on actotal, which aims to capture the magnitude of major events. Our dataset further
+contains a breakdown of this variable for interstate and societal violence (inttot and civtot), as well
+as a dummy variable, dum_mepv, which equals 1 for any period that contains a major episode of
+political violence. Note that Systemicpeace.org data does not include data for 2019. 17
+
+
+
+
+17 In future updates of the dataset, we plan to include data from the Varieties of Democracy Project to capture
+
+institutional quality.
+
+
+
+
+                                                    -12-
+Variables in the “Large Model”
+For human capital (education) we rely on the log human capital index, lhc, from PWT10.0, which
+linearly interpolates data on educational attainment from Barro and Lee (2013) and assumes a certain
+rate of return for primary, secondary, and tertiary education. Human capital is widely assumed to be
+a key driver of cross-country income differences (Mankiw et al., 1992; Glaseser et al., 2004;
+Hanushek and Woessmann, 2015) but problems in adequately measuring human capital across a
+wide range of countries have also been pointed out in the literature (e.g., Pritchett, 2001; Hanushek
+and Woessman, 2012).
+To measure inequality, we take the Gini coefficient of market and disposable incomes, gini_mkt
+and gini_disp, respectively, from the Standardized World Income Inequality Database (Solt, 2019).
+It should be noted that this data is severely over-imputed. 18 Following the literature (e.g., Bruckner
+and Lederman, 2018; Scholl and Klasen; 2019), we do not log-transform this variable. As discussed
+in those studies, there are several approaches to address apparent endogeneity concerns for this
+variable and several arguments suggest various functional forms (changes vs. levels, quadratic and
+interaction terms; e.g., Gründler and Scheuermeyer, 2018; Blotevogel et al., 2022). We opt for
+changes in the Gini of market incomes, dgini, in our regression models.
+
+
+
+
+5. Reference Models and Results
+
+5.1 Baseline Results from Least Squares Estimation
+Table 2 contains the results of the fixed effect regression, as specified in equation (1), with the
+variables introduced above. The “small model” in column (1) captures fewer variables, which allows
+for a larger sample size (~1,500 observations from 168 countries). At each column of table 2, the
+model is sequentially extended, shrinking the sample accordingly.
+The results in table 2 can be summarized as follows:
+(i) First, the autoregressive parameter is in the expected range, hovering around 0.8. Note that this
+parameter is likely downward biased, as further discussed in section 5.4.
+(ii) Second, a number of correlations is quite robust: infrastructure and trade are positively
+correlated with income per capita levels, financial crises, inflation, and inequality changes negatively.
+All those correlations are statistically different from 0 across all specifications (at conventional
+levels of significance).
+(iii) Third, a number of correlations are in line with expectations and show reasonable standard
+errors but cannot be reliably distinguished from a 0-correlation in most models. This concerns the
+negative coefficient estimates for temperature variability, terms of trade changes, and growth
+volatility, as well as the positive parameter estimate for credit/GDP, FDI, human capital, and the
+non-linear U-shaped relationship with export concentration. The latter suggests that medium
+specialization (around the sample mean) is associated with the lowest income levels and growth
+strategies can either be successful through diversification (e.g., United States, Netherlands) or
+specialization in goods with outstanding comparative or factor advantage (e.g., Saudi Arabia, United
+Arab Emirates).
+
+
+
+
+18   For this reason, we plan to include data from pip.worldbank.org in future updates of the dataset instead.
+
+
+
+
+                                                       -13-
+              Table 2: Main Regression Results
+                      (1)          (2)                   (3)
+VARIABLES         small model medium model          large model
+
+lagdependent         0.798***            0.802***      0.738***
+                     (0.0242)            (0.0285)      (0.0359)
+linflation_na       -0.227***             -0.109*     -0.128***
+                     (0.0425)            (0.0604)      (0.0326)
+lrer                  0.00298           0.00523**     0.0121***
+                    (0.00273)           (0.00243)     (0.00305)
+ltraderesid         0.0818***            0.121***      0.117***
+                     (0.0262)            (0.0454)      (0.0322)
+infra_index         0.0813***           0.0719***     0.1000***
+                     (0.0160)            (0.0208)      (0.0205)
+dum_fincrisis      -0.0483***          -0.0389***    -0.0274***
+                    (0.00894)            (0.0104)     (0.00833)
+sd_temperature        -0.0237            -0.0473*       -0.0337
+                     (0.0199)            (0.0266)      (0.0263)
+dltot                 -0.0266             -0.0459       -0.0448
+                     (0.0399)            (0.0444)      (0.0446)
+lkg                 -0.0468**            -0.00898        0.0280
+                     (0.0184)            (0.0207)      (0.0213)
+sd_growth           -0.622***              -0.156        -0.261
+                      (0.236)             (0.256)       (0.280)
+durbanpop           0.0103***             0.0100*      -0.00789
+                    (0.00395)           (0.00551)     (0.00535)
+lcredit                                    0.0151        0.0162
+                                        (0.00988)      (0.0147)
+lFDIstock_ipol                           0.0132**        0.0122
+                                        (0.00621)      (0.0123)
+lEDI_ipol                                 -0.268*      -0.299**
+                                          (0.154)       (0.149)
+lEDI_ipol_sq                               0.127*       0.138**
+                                         (0.0665)      (0.0653)
+actotal                                 -0.0137**    -0.0186***
+                                        (0.00668)     (0.00447)
+lhc                                                       0.150
+                                                       (0.0912)
+dgini                                                 -0.0110**
+                                                      (0.00530)
+Constant            1.924***           2.033***        2.629***
+                     (0.202)            (0.252)         (0.308)
+
+Observations         1,507             967                635
+R-squared            0.897            0.894              0.923
+(within)
+No. countries         168              149                128
+Estimation            FE                FE                FE
+Period FEs            Yes              Yes                Yes
+          Cluster robust standard errors in parentheses,
+                *** p<0.01, ** p<0.05, * p<0.1
+
+                                -14-
+(iv) The positive parameter estimate for the real exchange rate is rather surprising: an increase in
+this variable reflects a real appreciation, which is expected to be negatively correlated with output
+and growth through various channels. 19 Although our parameter estimate is statistically
+indistinguishable from 0 in column (1), the positive correlation is significant in all other three
+specifications and raises doubt about the conventional wisdom that devaluations will boost growth
+(see Rodrik 2008 and comments by Henry and Woodford 2008, Gopinath et al. 2020, Krugman and
+Taylor 1978). Possibly, the positive association reflects a Balassa-Samuelson effect or that a real
+appreciation of the home currency may improve access to foreign inputs and capital goods.
+(v) We are not as confident about the estimated parameters for government consumption and
+changes in the share of urban population. Those estimates change prefix across specifications and
+partly show large standard errors compared to individual point estimates. Nevertheless, those
+variables may matter for certain country groups (which may be less present in the smaller samples)
+and/or show some degree of non-linearity that makes estimates susceptible to sample variations.
+In what follows, we focus on the medium and large models, because the small model (1) excludes
+several potentially policy-relevant variables and, reassuringly, estimated coefficients are very similar
+across specifications in any case – none of the coefficient signs changes, except for the change in
+urban population, which turns negative and insignificant in the large model.
+
+
+
+5.2 What Variables Correlate Strongest with Growth across Countries?
+Since the regression coefficients show how much a one-unit change in explanatory variables is
+associated with changes in the income per capita level, their economic relevance is difficult to
+compare. For example, the coefficient estimate for infrastructure is lower than for inflation. But how
+can we compare the two? A look at the summary statistics in table 1 suggests that the former varies
+more than the latter and is hence more likely to matter more for income changes.
+Standardizing beta coefficients by the standard deviation of explanatory variables takes those
+differences in measurement units and variability into account. 20 Such standardized beta coefficients
+can be interpreted like correlation coefficients (ranging from -1 to 1, with 0 indicating no correlation
+between the explanatory and the dependent variable). They are reported in Online Appendix A.2,
+table A.2 for the medium and large models (corresponding to columns (2) and (3) in table 2).
+Neglecting the lagged dependent variable (which is not of policy relevance), one can observe that
+standardized beta coefficients are largest for infrastructure, trade diversification, and the real
+exchange rate.
+Another way to assess economic relevance of the different variables is a variance decomposition
+that investigates the relative contribution of each variable to an overall model fit statistic, in our case
+the R squared. This method, called dominance analysis (Grömping, 2007), estimates 2K sub-models
+of regression equations (where K is the number of parameters/variables; 65,535 and 262,143
+regressions, respectively, for our medium and large model) and calculates the weighted average
+marginal contribution of each variable to the explained variance across all those models. When
+looking at the resulting standardized dominance statistics, we find human capital, infrastructure, FDI,
+and credit/GDP to explain variation in income well.
+Both approaches to gauge the economic relevance of variables can differ because dominance
+analysis assesses the goodness of a variable to explain variation of income within the sample and
+
+19 We also calculated deviations of the real exchange rate from an HP-filtered trend, as well as volatility
+
+measures, but the results did not provide additional insights. The positive coefficient also remains when limiting
+the sample to earlier periods.
+20 Formally, we multiply the coefficients in columns (2) and (3) in table 2 with the standard deviation within
+
+panel units (countries), divided by the within standard deviation of the dependent variable.
+
+
+
+
+                                                      -15-
+takes various sub-models into account. Standardized beta coefficients, in contrast, gauge the
+potential importance of a variable in one model with all variables included. FDI and credit are
+examples of variables that show strong dominance but rather low standardized beta coefficients.
+This may be the case because they are both standardized by GDP, increasing the co-variability with
+the dependent variable without necessarily having a high partial correlation with the latter.
+
+
+
+                          Figure 1: Measures of economic relevance
+
+
+
+
+Note: The figure shows standardized beta coefficients (vertical axis) and standardized dominance statistics
+(horizontal axis) for the large model. Red indicates a negative coefficient estimate. Light color indicates that
+the estimate is not statistically different from 0 on a 10% significance level. For export diversification (EDI),
+which enters with a linear and quadratic term, (absolute) beta coefficients of both terms are averaged and treated
+as a “set” in the dominance statistic.
+
+
+
+Figure 1 plots the standardized beta coefficients on the vertical axis and the standardized dominance
+statistic on the horizontal axis. They are based on the large model, with qualitatively similar results
+of the medium model in the online appendix (Figure A.1). A number of observations are worth
+discussing.
+(i) The overall correlation between both measures is rather modest (0.36 for the large model; 0.64
+for the medium model), reflecting the fact that both statistical measures capture different aspects of
+economic relevance.
+(ii) Infrastructure shows high economic relevance in both dimensions. This confirms findings in the
+recent literature that highlight the importance of infrastructure for growth and productivity.
+
+
+
+
+                                                      -16-
+(iii) Interestingly, the strongest dominance is attributed to human capital. This appears conflicting
+with the conclusion from several growth regressions that stress the statistical insignificance of this
+variable, which also cannot be distinguished from a 0-correlation in our regression. But statistical
+insignificance can be the result of poor measurement of that variable, which has been pointed out in
+the literature (Pritchett 2001; Hanushek et al. 2017) and should not be confused with economic
+irrelevance (that dominance criteria aim to measure). More sophisticated measurement approaches
+usually confirm the importance of human capital for growth (e.g., Hanushek and Woessmann 2012;
+Maloney and Valencia Caicedo, 2022). In line with the potential problem of measurement error
+(which biases estimated coefficients towards 0), the standardized beta coefficient suggests a more
+modest economic relevance than the dominance statistics. This may also reflect that human capital
+is usually quite persistent and shows little variability over time, which lowers the standardized beta
+coefficients by construction (see previous footnote).
+(iv) To a lesser extent, FDI and credit/GDP provide a good fit for income per capita levels in the
+sample but only show modest partial correlations with the latter (which cannot be distinguished from
+0 in a statistical sense, except for FDI in the medium model, see Online Appendix A.2).
+(v) Conversely, trade diversification, 21 the exchange rate, political violence, trade openness, and
+inflation show relevant partial correlations with income but are attributed a low dominance. In the
+medium model (see Online Appendix A.2), the partial correlation further increases for trade
+openness and financial crises but declines for the exchange rate.
+Our overall reading of those results is that: (i) they confirm the potentially important role of
+infrastructure for growth, which the recent literature has emphasized, (ii) typically insignificant
+parameter estimates of human capital in growth regressions shall not lead to the conclusion that
+education does not matter, and (iii) export diversification may potentially play a large role that
+should be investigated in further research.
+Note that this cross-country perspective on economic relevance does not mean that those variables
+are also most likely growth correlates in individual countries. For example, the partial correlation
+between major episodes of political violence and income levels may be large but there may not be
+much variability of such events across the whole sample. For a conflict-affected country, only a
+country-specific growth analysis, as outlined in section 6, will reveal its importance.
+
+
+
+5.3 How Stable Are Parameters across Country Groups?
+A policy-relevant concern with growth regressions is that parameters are not identical across country
+groups. Regional heterogeneities were extensively discussed in the context of the “Africa dummy”
+in growth regressions (see, e.g., Easterly and Levine 1997; Sachs and Warner 1997). Furthermore,
+it is also plausible that growth correlates are systematically different across country groups with
+different income levels.
+In country-specific analysis, we therefore advise to statistically test if parameters of the country
+under investigation are systematically different, or if parameters for a reasonably similar peer group
+are systematically different from the overall sample. Such a peer group could consist of countries
+with similar geographic or socio-economic features. Empirically, such tests can be implemented
+with simple interaction of country- or group-specific dummy variables with the relevant model
+variables. Examples for such group-specific interactions in regression commands (for income and
+regional groups) are provided in the code that is available in the GitHub repository
+KMWacker/growthdata accompanying this paper. Parameter estimates that are significantly different
+
+21Because EDI consists of the linear and squared term, we take the average of both (absolute) coefficients for
+the display of the standardized beta coefficient and group them together as a so-called “set” in the dominance
+analysis.
+
+
+
+
+                                                    -17-
+should then be applied to the quantitative assessment.
+To assess how likely systematic differences in parameters across country groups are, we estimate
+the ‘small’ model separately by income and regional group. 22 Note that this drastically limits the
+number of observations by regression and, accordingly, leads to a higher standard error of parameter
+estimates. For this reason, we also limit this exercise to the ‘small’ model, where most observations
+are available. Sample sizes drop to approximately 500 observations by income group and to as little
+as 296 observations by regional group (in the case of Europe). Figures 2 and 3 plot the parameter
+estimates and their 95% confidence intervals for income and regional groups, respectively.
+
+
+               Figure 2: Parameter heterogeneity across income groups
+
+        lagdependent
+          linflation_na
+                    lrer
+            ltraderesid
+            infra index
+               fincrisis
+              sd(temp)
+                   dltot
+                     lkg
+             sdgrowth
+           durbanpop
+
+                           -2                        -1                         0                         1
+
+                                                 low income           middle income
+                                                 high income
+
+
+       Note: Reported parameters are partial correlation coefficients, not standardized beta coefficients.
+
+
+
+A key message from this exercise is that country group heterogeneities do not turn key results upside
+down but that there are heterogeneities across groups that are mostly in line with economic reasoning.
+For example, growth volatility seems most negatively associated with growth in low-income
+countries, which have the least macroeconomic options to cushion themselves against shocks.
+Inflation does not seem to correlate with growth in high-income countries, consistent with the idea
+that such a relationship only prevails at higher inflation rates, which are rarely observed in high-
+income countries during the sample period. There also seems no relationship between infrastructure
+and growth in high-income countries, possibly reflecting that existing gaps are modest and marginal
+
+22 For the income classification, we classify each country into low, middle, and high income depending whether
+
+they fall into the lowest, middle, or highest third of the income distribution in a given period. This implies that
+countries can switch classification over time. For the regional classification, we follow STATA's `kountry' ado
+UN classification into 4 regions.
+
+
+
+
+                                                      -18-
+returns hence lower than in lower-income countries. On the other hand, it is interesting to see the
+most negative and positive parameter estimates for inflation and infrastructure for Europe in the
+regional breakdown of Figure 3. Taken together, this suggests that the applied regional classification
+is probably too broad. Finally, it is worth highlighting that temperature volatility negatively
+correlates with growth mostly in low-income countries, which often heavily rely on agriculture.
+Taken together, our results suggest that using growth regressions for country-specific analysis should
+actively test for parameter heterogeneity. In case significant parameter heterogeneity is found for the
+country (group) of interest, it remains to be seen whether it also translates into quantitatively relevant
+differences in country-specific growth correlates in the sense of section 6.1.
+
+
+
+             Figure 3: Parameter heterogeneity across regional groups
+
+       lagdependent
+         linflation_na
+                   lrer
+           ltraderesid
+           infra index
+              fincrisis
+             sd(temp)
+                  dltot
+                    lkg
+            sdgrowth
+          durbanpop
+
+                          -2                       -1                        0                         1
+
+                                                        Africa     Americas
+                                                        Asia       Europe
+
+
+      Note: Reported parameters are partial correlation coefficients, not standardized beta coefficients.
+
+
+
+
+                                                    -19-
+5.4 Additional Robustness Checks and Analysis
+We report additional robustness checks and analysis in an Online Appendix, available in the GitHub
+repository KMWacker/growthdata. Online Appendix A.3, for example, checks for influential outliers
+and provides estimation results without those observations and checks for changes in parameters or
+model performance over time. Online Appendix A.4 provides results from System-GMM estimation
+which is a possibility to use internal instruments (i.e., lags and leads of potentially endogenous
+variables) for parameter identification. This possibility, however, comes with the well-known
+downside that results can be susceptible to instrument choice. It is now standard to restrict the
+instrument set to avoid instrument proliferation (Roodman, 2009) but this does not resolve (or even
+aggravate) problems of weak identification. Kraay (2015) provides a discussion of this problem and
+some solutions, which are not very promising for the large set of variables we consider. Given that
+problems of ordinary least square regressions and associated fixed effects are much better-
+understood, we consider them more appropriate for our baseline. The most relevant difference that
+our System-GMM crosscheck provides to this baseline is that the correlation between income p.c.
+and temperature variability becomes positive in the System-GMM results. Moreover, the coefficient
+for the lagged dependent variable, θ, is estimated to be larger under System-GMM, which is expected
+due to the “Nickell bias” in fixed effects estimation of dynamic models. On average, across all three
+main models considered (small, medium, large), this difference is about 15%. In other words, the
+System-GMM            results        suggest         stronger        persistence    effects.        23
+
+
+
+
+6. Practical Aspects for Country-Specific Growth Analysis
+
+This section illustrates in more detail how typical country-specific growth analysis is conducted in
+studies covering a wide range of different countries and regions such as Araujo et al. (2016) for Latin
+America and the Caribbean, Moller and Wacker (2017) for Ethiopia, Haile and Moller (2018) for
+the West African Economic and Monetary Union, Geiger et al. (2019) for Ghana, or Beyer and
+Wacker (2023) for Bangladesh.
+
+
+
+6.1 Analyzing Country-Specific Growth Correlates: An Illustration
+
+Recall equation (2) from section 3:
+              ∆ln������������������������������������ = ������������∆ln������������������������,������������−1 + ������������1 ∆������������1,������������������������ + ⋯ + ������������������������ ∆������������������������,������������������������ + ∆������������������������ + ∆������������������������������������,
+which can now be parameterized with the results from the previous section to analyze country-
+specific growth performances. Specifically, we have obtained the relevant parameter estimates ������������ ̂ , ������������
+                                                                                                        �,
+      ̂
+and ������������ in section 5 (although the latter were not displayed in table 2). We illustrate this procedure
+based on the small model (1) in table 2 for the case of Bangladesh between period 7 (2000-2004
+averages) and period 8 (2005-2009 averages), when growth was above 4% p.a. Table 3 first
+reproduces the parameter estimates from table 2 in column (1). As equation (2) highlights, those
+need to be multiplied with changes in the explanatory x variables. Column (4) contains those variable
+changes between period 7 and 8. For example, the inflation variable linflation_na increased from
+0.035 in period 7 to 0.101 in period 8 – a difference of 0.066, which gets multiplied with the
+
+
+23The implication of this difference in persistence for the short-run and long-run parameter estimates of other
+variables is not clear and can go both ways. See Keele and Kelly (2005) for an instructive discussion.
+
+
+
+
+                                                                         -20-
+parameter in column (1) to obtain the growth contribution of -1.49% in column (5). This result
+reflects the idea that increases in the inflation rate are usually negatively correlated with growth.
+Repeating this exercise for the other x variables as well adds up to a growth contribution of 2.96%.
+Note that we are looking at 5-year intervals, so all growth rates shall be divided by 5 to approximate
+annualized values.
+
+
+
+   Table 3: Calculation of growth contributions for Bangladesh in Period 8
+                              (1)           (2)            (3)          (4)              (5)
+                                                                                       growth
+                                         period 7        period 8   Difference
+                          parameter                                                 contribution:
+                                         2000-04         2005-09     (3)-(2)
+                                                                                      (1) x (4)
+          Inflation
+                            -0.227        0.035           0.101        0.066           -1.49%
+     (linflation_na)
+     Real exchange
+                             0.003        -5.521         -5.532       -0.011           0.00%
+         rate (lrer)
+    Trade openness
+                             0.082        0.292           0.283       -0.009           -0.07%
+       (ltraderesid)
+      Infrastructure
+                             0.081        -0.191          0.154        0.345           2.81%
+      (infra_index)
+    Financial crisis
+                            -0.048           0              0            0             0.00%
+    (dum_fincrisis)
+    Climate change
+                            -0.024        3.556           3.400       -0.156           0.37%
+   (sd_temperature)
+     Terms of trade
+                            -0.027        0.015           0.028        0.014           -0.04%
+    changes (dltot)
+       Government
+                            -0.047        -2.657         -2.754       -0.097           0.45%
+   consumption (lkg)
+   Growth volatility
+                            -0.622        0.005           0.008        0.003           -0.20%
+       (sd_growth)
+    Change in urban
+                             0.010        2.354           3.451        1.097           1.13%
+   pop. (durbanpop)
+      SUBTOTAL                                                                         2.96%
+      + persistence          0.798       (growth period 6-7)           0.159           12.71%
+
+    + period dummy            (=1)        -0.037          0.011        0.047           4.71%
+
+   SUM (growth rate over 5 year period as predicted by model)                         20.39%
+
+   ANNUALIZED growth rate (=sum divided by 5)                                          4.08%
+
+
+
+
+                                                  -21-
+For the persistence term ������������∆ln������������������������ ,������������−1 , we need to multiply the autoregressive coefficient 0.798 with
+the growth rate from the previous period, where lrgdpna_pc increased from 7.447 (in period 6) to
+7.606 (in period 7), a (log) difference of 0.159, giving us a growth contribution of 12.7%. While this
+number appears large (2.5% when annualized), remember that this term is supposed to echo the
+contribution from all changes in past growth correlates and we are looking at the end of a very
+dynamic period in Bangladesh. 24
+For the component ∆������������������������ , we simply calculate the change in the period dummies (which were not
+displayed in table 2), which gives us a growth contribution of 4.7%, so that all growth contributions
+add up to 20.4%, or 4.1% p.a. The difference to the actual growth rate of 4.4% (calculated as the
+change in lrgdpna_pc divided by 5) reflects the residual ∆������������������������������������ , which is not explained by the model.
+Figure 4 summarizes the main elements of this decomposition graphically.
+In this example, the model performs well in explaining a country’s growth performance and we can
+conclude that infrastructure and urbanization were important contributors to growth, while inflation
+exerted a considerable drag. The case of Bangladesh is studied in more detail in Beyer and Wacker
+(2023) using the same data set but a slightly different selection of variables (and associated
+differences in the sample coverage).
+
+
+
+     Figure 4: Growth contributions for Bangladesh (period 8, annualized)
+
+
+
+
+Notes: Figure 4 graphically depicts the contributions calculated in Table 3 in annualized terms.
+“Contemporaneous changes in growth correlates” corresponds to “subtotal” in Table 3. The difference between
+the actual growth rate (4.4%) and the sum of individual components (4.3%) is due to rounding.
+
+
+
+24An alternative option is to use the predicted (instead of the actual) growth rate from the previous period. This
+option is slightly more difficult to implement because we need to predict growth and need to find a solution for
+how to do this for the first period. But it has the ability to capture changes in potential growth correlates that
+have not fully materialized in a given period. For example, a government may have implemented a large
+infrastructure project in 2004. Because this is the last year of period 7 (2000-2004), the growth benefits of this
+project may not have fully materialized in the actual growth rate for period 7 but would be captured in predicted
+growth (which uses infrastructure improvements as explanatory variable).
+
+
+
+
+                                                      -22-
+We finally recommend to cross-check country-specific decompositions with various model
+specifications (such as our small, medium, and large model), estimation techniques (GMM and
+alternative estimators) and sample heterogeneities (see section 5.3). The latter two aspects would
+simply mean using different parameters in column (1) of Table 3, the former would additionally
+involve altering the variables in the lines of Table 3.
+
+
+
+6.2 Persistence Component: Problems and Alternatives
+Our example of Bangladesh also suggests that the role of “persistence” is quite large in period 8. It
+is generally meaningful that the model captures past changes in growth correlates (see also section
+3). An infrastructure project constructed in period 7, for example, is still likely to have an impact in
+period 8. And Bangladesh saw major improvements in typical growth correlates in periods 5 to 7
+(Beyer and Wacker, 2023). Yet, there are several problems for the purpose of policy analysis.
+A first problem is that large persistence (which results from high growth rates in previous periods)
+often masks the role of contemporary changes in growth correlates. Individual contemporaneous
+growth correlates would simply not be visible in Figure 4. We therefore recommend breaking this
+block down in a separate graph, possibly using a grouping of variables (see section 6.5 and Figure
+3 in Beyer and Wacker, 2023).
+A second problem is that the persistence component contains potential information about past
+changes in growth correlates and associated policies. In the above example, the model implies that
+contemporaneous changes in growth correlates will affect growth in period 9 by 0.6% x 0.8 (the
+persistence parameter) = 0.5%. Likewise, we can go back in time (e.g., to periods 5 to 7) and
+calculate how changes in growth correlates in previous periods would translate into growth in period
+8, according to the model. It may be meaningful to perform such a calculation and split the
+persistence component in Figure 4 into a part that is explained by changes in growth correlates over
+the last periods, and the remaining “other persistence” (see Figure 2 in Beyer and Wacker, 2023). 25
+This helps to assess how much of the persistence term is backed by recent changes in typical growth
+correlates. It further gives the persistence term a more policy-relevant and less mechanical
+interpretation.
+A third and related problem is that we used actually observed growth from the previous period to
+calculate the contribution of persistence. While this is the technically correct approach, it can be
+misleading if changes in growth correlates did not fully materialize in actually observed growth in
+the past. For example, an infrastructure project may have been realized in 2004. Since this is the
+final year of period 7, it may not be adequately reflected in the actual growth rate of that period and
+hence have little impact in subsequent periods via dynamic persistence effects. 26 This can be
+particularly problematic in settings that are most interesting to analyze: dynamic environments with
+comprehensive policy changes.
+
+
+
+
+25   Formally, we can use equation (3) to decompose the term ������������∆ln������������������������,������������−1 in equation (2) into:
+                          ������������
+������������∆ln������������������������,������������−1 = ∑������������=1 ������������ ������������ ∑������������ ∆������������������������,������������−������������ + ν������������−1 , where ν is “other persistence”, and the first term sums persistence
+from past periods t-j over J periods. E.g., if we set J=1, we have θ∑������������ ∆������������������������,������������−1 as persistence explained by
+changes in growth correlates from period t-1. In the above example of considering periods 5 to 7 for period t=8,
+we would have J=3. Note that the lag depth J is limited in practice and that the first and second terms can go
+in opposite directions.
+26 For another example, consider a temporary one-time shock that nullifies actual growth in a period despite
+
+many improvements in actual growth correlates taking place. Those improvements should have long-lasting
+persistence effects but due to a 0 observed growth rate, no persistence effects will be present.
+
+
+
+
+                                                                      -23-
+We therefore suggest to alternatively consider the use of predicted growth rates in the persistence
+term. Based on equation (2), and suppressing the country subscript c, we can define predicted growth
+as:
+                   ∆lny               � ������������−1 + ������������1 ∆������������1,������������ + ⋯ + ������������������������ ∆������������������������,������������ , (4)
+                      � ������������ = ������������∆lny
+such that any changes in x will be reflected in this predicted growth rate and hence in subsequent
+persistence terms. Note that the presence of a lagged predicted growth rate in equation (4) requires
+some approximation (e.g., with actual growth) in the starting period.
+
+
+6.3 What If the Model Does Not Predict Actual Growth Rates Well?
+In the above example for Bangladesh, our model explained actual growth in the 2005-2009 period
+very well: the residual of 0.27 percentage points (=4.35% - 4.08%) is less than 10% of the actual
+growth rate. More generally, discrepancies of 1/3 are not exceptional, and they can easily amount to
+1/2 in some cases. Such large residuals may result from various sources that may be informative in
+its own and require country-specific expert knowledge and additional analysis and tools to detect
+the underlying reasons of such deviations.
+One possibility is that the model is not adequate for the country under consideration. For example,
+small-island states, resource-abundant economies, or transition countries feature specific
+peculiarities that may not be adequately captured by the model – either because relevant model
+variables are missing, or because the growth correlation with existing model variables is different
+for those countries. In the former case, extending the model with those relevant variables can be
+considered. In the latter case, one can investigate parameter heterogeneity for country groups.
+Another possibility is that national GDP numbers are inflated – due to GDP rebasing or creative
+national accounting – or otherwise mismeasured. Comparing GDP data to alternative proxies of
+economic activity (e.g., nightlight) can be informative to substantiate this possibility.
+A third possibility is that growth dynamics during periods of large residuals are driven by cyclical
+factors. Neoclassical growth models focus on the role of fundamental long-run growth correlates, as
+opposed to cyclical factors. The next subsection will give an example of such cyclical deviations.
+
+
+6.4 Crises and Growth Underperformance
+The example of Ghana in Geiger et al. (2019) is instructive to see how deviations between model
+and actually observed growth rates reflect cyclical effects and can be used to assess potential growth
+vulnerabilities. Their model only predicts a growth rate of 1.1% for the early-2010s but actual growth
+was almost 10%. As is noted in their paper, actual growth mainly reflected cyclical factors (oil
+discoveries, commodity prices, loose fiscal stance) and was not sufficiently backed up by relevant
+long-run growth correlates that feature in the model. This can be a warning sign for growth to run
+out of steam – as actually happened in the case of Ghana, which defaulted on its external debt in
+2023. Using filtering techniques that separate growth into a trend and cyclical component can be
+useful to detect such cyclical deviations from trend. Moreover, it could be a warning sign for
+vulnerabilities to build up if developments in credit/GDP are unusually large, particularly if paired
+with large government consumption and foreign financing (e.g., fast increases in FDI or other capital
+inflows, or an increasing current account deficit).
+A separate case concerns longer-lasting periods when growth considerably underperforms in a
+country, with growth rates hovering around or below 0. On top of the steps suggested under 6.3, one
+could look at levels of main growth correlates (see 5.2) in comparison to faster-growing but
+structurally similar peer countries and check if the country is considerably falling back in a typical
+growth correlate. Moreover, one could investigate in which period actual growth started to
+
+
+
+
+                                                         -24-
+significantly underperform relative to predicted growth and check for economic policy changes
+during this period.
+
+
+6.5 Grouping of Variables
+With an increasing number of explanatory x variables in the model, it becomes increasingly difficult
+to display the results in an easy-to-access fashion for several periods. The studies cited at the
+beginning of this section hence aggregate those variables into different groups. In the above
+illustration for Bangladesh, for example, one could group the growth contributions of inflation, the
+real exchange rate, financial crises, government consumption, and growth volatility into a “macro
+stabilization” category. Grouping choices will depend on the question or hypothesis one is interested
+in. For example, Araujo et al. (2016) were particularly interested in whether the solid growth
+performance in most Latin American and Caribbean countries in the early 2000s was due to good
+policies or a favorable external environment, which motivated their variable grouping into structural
+policies, stabilization policies, and external conditions.
+
+
+6.6 Extending the Model to More Recent Periods
+Our data set ends with period 10, covering the years 2015-2019. If one wants to analyze a more
+recent period for an individual country, one does not necessarily need to update the whole data set
+(although we plan for regular updates in the GitHub repository). Remember that country-specific
+growth analysis is performed with changes of variables. One can hence rely on the parameter
+estimates from models like those in table 2 and apply them also to more recent changes in variables,
+even if they are not fully consistent with the level variables in the model. For example, one may not
+be able to re-calculate the full infrastructure index in our dataset for more recent periods. But one
+could alternatively create a similar index for the country under investigation with available variables
+that resembles the index in the dataset for the pre-2019 periods as good as possible and then take
+changes beyond 2019 for country-specific growth analysis.
+
+
+6.7 Creation of Growth Scenarios and Benchmarking
+A likely question that arises in a policy context is: what growth could a country expect if a certain
+explanatory variable xk changes? Recall that the model is not suited to provide an estimate of causal
+effects for such a scenario, but rather a thought experiment along the lines: what income changes
+did countries usually experience during periods when x changed, holding several other aspects
+constant?
+Usually, benchmarking to an aspirational peer country provides a meaningful magnitude for a
+potential improvement in a growth correlate xk. For example, column (3) of Table 3 shows that the
+infrastructure index for Bangladesh stands at 0.154 in period 8. From the data set in the GitHub
+repository, we can further infer that the infrastructure index in Indonesia stood at 0.655 in the same
+period. What growth did countries usually observe when they closed the remaining gap of 0.5 units?
+For simplicity, we assume that the closure of the whole gap happens in one period. 27 The model then
+implies an associated increase in income per capita levels of Δxk·β = 0.5∙0.08=4.1% in the short run
+and Δxk·β/(1-θ) = 0.04/(1-0.8)= 20.2% in the long run.
+Such benchmarking exercises can help prioritize broad areas of reform because they combine partial
+growth correlations (captured in the parameters β) with magnitudes of gaps in typical growth
+correlates xk. In other words, section 5.2 highlights how important β possibly is across countries, but
+
+27This is a possible but very ambitious improvement. The average (median) change in the infra index per period
+over all sample observations is 0.12 (0.16). The 95th (99th) percentile change is 0.43 (0.63).
+
+
+
+
+                                                    -25-
+country-specific benchmarking relative to peer countries additionally adds information about
+existing gaps in x and scope for policy prioritization. Assuming that improvements are easiest in
+variables where gaps are large, such benchmarking may help identify areas with the “biggest bang
+for the buck”. Araujo et al. (2016: pp. 58-66) provide an instructive example of such a benchmarking
+exercise.
+It is finally instructive to display the dynamics of such an exercise. Assuming that we observe a 0.5-
+unit improvement of the infrastructure index in period 8, we can expect the above-mentioned growth
+improvement of 4.1 percentage points in period 8. Since this magnitude refers to the whole 5-year
+period 8, it would imply a 0.8 percentage point increase of the annual growth rate during this period.
+Given that we looked at a tremendous increase in the variable that arguably shows the highest partial
+correlation with growth in the sense of section 5.2, this highlights how difficult it is to achieve large
+increases of the growth rate through improvements in structural correlates of growth over a policy-
+relevant time horizon.
+Via the persistence term θ, the infrastructure improvement in period 8 translates into income growth
+of 4.1%∙0.8=3.2% in period 9, to 3.2%∙0.8= 4.1%∙0.8²=2.6% in period 10, etc. This decaying
+dynamic is presented in Figure 5. Extending the periods until infinity and adding all bars up lead to
+the limit of a 4.1%/(1-0.8)=20.2% improvement in income per capita in the long run. This highlights
+the nature of exponential growth: while the 0.8 percentage point increase of the annual growth rate
+we derived above may seem small from a short-run perspective, it adds up to a substantial income
+increase above 20% over time.
+
+
+  Figure 5: Income increase associated with a 0.5-unit raise of infrastructure
+
+
+
+
+Note: Figure 5 displays the percentage point increase in income per period that is associated with a one-time
+0.5-unit increase in the infrastructure index in period 8, according to the model. Note that this predicted income
+change refers to a 5-year period and is not (additional) growth per annum.
+
+
+
+
+                                                      -26-
+7. Conclusion
+
+We have illustrated how growth regressions can be a useful tool for country-specific policy analysis
+of growth patterns. Economists performing such analysis will find the data and models presented in
+our paper a useful reference and can further tailor those to their specific needs (e.g., by exploring
+further heterogeneities, applying different estimators or model averaging, adding or updating
+variables). Our reference data can additionally be used by researchers and analysts to explore certain
+growth-relevant aspects in more detail (e.g., looking at threshold relations or other non-linearities
+for variables like inflation).
+Future research could further improve policy modeling with growth regressions. One apparent angle
+is to reconsider the dynamic implications of the econometric neoclassical growth model, which
+assumes that persistence is uniform across countries and variables. Country heterogeneities could
+easily be addressed with recent advances in the grouped heterogeneity panel econometrics literature
+(e.g., Bester and Hansen, 2016; Muris and Wacker, 2022). But it may also be necessary to consider
+alternative dynamic modeling strategies that account for the plausibility that improvements in
+infrastructure, for example, have more persistent correlations with growth than certain
+macroeconomic stabilization policies like taming inflation. Another angle worth exploring is to
+develop metrics that can plausibly compare the relative importance of different policy packages. For
+example, economists are often curious about the extent to which domestic policies or a favorable
+external environment can explain a country’s growth episode. Explicit modeling of such relative
+importance appears futile. 28 Researchers may rather consider using clustering techniques to separate
+common time-varying shocks in groups of reasonably similar countries (which can then be
+interpreted as external factors) from variation in growth that is explained by domestic policy
+variables.
+Since our analysis is mostly descriptive and aims to facilitate country-specific growth analysis,
+future work could also further the identification of peer and reference groups in growth patterns.
+Moller and Wacker (2017) provide an example by using a cluster analysis to reveal the uniqueness
+of Ethiopia’s macroeconomic policy mix. The benchmarking of Bangladesh to other top performers
+in terms of changes in growth correlates in Beyer and Wacker (2023) is another example that could
+be furthered with more elaborate statistical techniques.
+Finally, more research will be needed to better integrate climate aspects into conventional empirical
+growth models. This includes an integrated assessment of climate vs. growth impacts of different
+policies, as well as more elaborate modeling of the relationship between climate change and growth.
+Our dataset can be a fruitful resource for such research.
+
+
+
+
+28 In most empirical specifications, the list of “domestic” variables will be more extensive than the set of
+
+variables capturing the external environment (see, e.g., Araujo et al., 2016). This will give more explanatory
+power to the former. It is also not straightforward how to best account for the fact that different countries
+respond differently to changes in “external” variables.
+
+
+
+
+                                                    -27-
+References
+
+     Acemoglu, D., S. Johnson, and J. A. Robinson. 2001. “The Colonial Origins of Comparative
+Development: An Empirical Investigation.” American Economic Review 91 (5): 1369–1401.
+      Acemoglu D., Johnson S., Robinson J., (2005): “Institutions as the fundamental cause of long
+run growth.” In: Philippe Aghion and Steven N. Durlauf (eds.) Handbook of Economic Growth, 385-
+472, Elsevier.
+     Afonso, A. and D. Furceri (2010): “Government size, volatility and economic growth.”
+European Journal of Political Economy 26(4): 517-532.
+      Andrews, Isaiah and Anna Mikusheva (2023): GMM is Inadmissible Under Weak
+Identification, arXiv.org paper 2204.12462.
+     Araujo, J.T., E. Vostroknutova, M. Brueckner, M. Clavijo and K.M. Wacker (2016): Beyond
+Commodities: The Growth Challenge of Latin America and the Caribbean. Latin American
+Development Forum Series, Washington, DC.
+    Arcand, Jean Louis, Enrico Berkes, and Ugo Panizza (2015): “Too much finance?” Journal of
+Economic Growth 20: 105–148.
+      Arellano, M. and O. Bover (1995): “Another look at the instrumental variable estimation of
+error-components models.” Journal of Econometrics 68: 29-52.
+    Barro, R. J. (1991): “Economic growth in a cross section of countries.” Quarterly Journal of
+Economics, 106(2), 407-443.
+      Bazzi, Samuel, and Michael A. Clemens (2013): “Blunt Instruments: Avoiding Common
+Pitfalls in Identifying the Causes of Economic Growth.” American Economic Journal:
+Macroeconomics 5(2), 152–186.
+    Berg, Andrew, Jonathan D. Ostry, Email Charalambos G. Tsangarides, and Yorbol
+Yakhshilikov (2018): “Redistribution, inequality, and growth: new evidence.” Journal of Economic
+Growth 23(3): 259-305
+    Bester, C. Alan and Christian B. Hansen (2016): “Grouped effects estimators in fixed effects
+models.” Journal of Econometrics 190(1): 197-208.
+     Beyer, R. and K.M. Wacker (2023): “Good Enough for Outstanding Growth: The Experience
+of Bangladesh in Comparative Perspective.” Development Policy Review: in press.
+     Bliss, Christopher (1999): “Galton’s Fallacy and economic convergence.” Oxford Economic
+Papers 51: 4-14.
+     Bloom, D.E. and D. Canning (2003): “How demographic change can bolster economic
+performance in developing countries.” World Economics 4(4): 1-14.
+     Blotevogel, Robert, Eslem Imamoglu, Kenji Moriyama, and Babacar Sarr (2022): “Income
+inequality measures and economic growth channels.” Journal of Macroeconomics 72: 103413.
+     Blundell, R. and S. Bond. (1998): “Initial conditions and moment restrictions in dynamic panel
+data models.” Journal of Econometrics 87(1), 115-143.
+
+
+
+
+                                              -28-
+     Boikos, Spyridon, Theodore Panagiotidis, and Georgios Voucharas (2022): “Financial
+development, reforms and growth.” Economic Modelling 108: 105734.
+    Bond, Stephen, Anke Hoeffler, and Jonathan Temple (2001): GMM Estimation of Empirical
+Growth Models. Nuffield College Economics Paper No. 2001-W21, University of Oxford.
+     Brown, J.D., G.A. Crespi, L. Iacovone, and L. Marcolin (2018): “Decomposing firm-level
+productivity growth and assessing its determinants: evidence from the Americas.” Journal of
+Technology Transfer 43: 1571–1606.
+      Brueckner, Markus, Era Dabla Norris, and Mark Gradstein (2015): “National income and its
+distribution.” Journal of Economic Growth 20(2): 149-175.
+      Brueckner, Markus and Daniel Ledermann (2018): “Inequality and economic growth: the role
+of initial income.” Journal of Economic Growth 23(3): 341-366.
+     Brunnermeier, Markus, Darius Palia, Karthik A. Sastry, and Christopher A. Sims (2021):
+“Feedbacks: Financial Markets and Economic Activity.” American Economic Review 111(6): 1845-
+79.
+   Bun, Maurice J.G. and Frank Windmeijer (2010): “The weak instrument problem of the system
+GMM estimator in dynamic panel data models.” Econometrics Journal 13(1): 95-126.
+     Burke, M., Hsiang, S.M., & Miguel, E. (2015). Global non-linear effect of temperature on
+economic production. Nature, 527, 235-239.
+     Cai, Zongwu, Linna Chen, and Ying Fan (2018): “A semiparametric quantile panel data model
+with an application to estimating the growth effect of FDI.” Journal of Econometrics 206(2): 531-
+553
+      Canova, Fabio (2004): “Testing for convergence clubs in income per capita: a predictive
+density approach.” International Economic Review, 45(1), 49-77.
+     Casella, Bruno, Maria Borga, and Konstantin M. Wacker (2023): “Measuring Multinational
+Production with Foreign Direct Investment Statistics: Recent Trends, Challenges, and
+Developments.” IMF Working Paper 23/113.
+      Caselli, F., G. Esquivel and F. Lefort. (1996): “Reopening the convergence debate: a new look
+at cross-country growth empirics.” Journal of Economic Growth, 1: 363-389.
+     Crespo Cuaresma, Jesus, Stephan Klasen, and Konstantin M. Wacker (2022): “When Do We
+See Poverty Convergence?” Oxford Bulletin of Economics and Statistics 84(6): 1283-1301.
+     De Haan, Jakob and Rasmus Wiese (2022): “The impact of product and labour market reform
+on growth: Evidence for OECD countries based on local projections.” Journal of Applied
+Econometrics 37(4): 746-770.
+     Deininger, Klaus and Lyn Squire (1998): “New ways of looking at old issues: inequality and
+growth.” Journal of Development Economics 57(2): 259-287.
+    Diao, Xinshen, Mia Ellis, Margaret S. McMillan, and Dani Rodrik (2021): Africa’s
+Manufacturing Puzzle: Evidence from Tanzanian and Ethiopian Firms. NBER Working Paper 28344.
+     Dollar, David, Tatjana Kleineberg, and Aart Kraay (2015): “Growth, inequality, and social
+
+
+
+
+                                              -29-
+welfare: cross-country evidence.” Economic Policy 30(82): 335-377.
+     Dollar, David, Tatjana Kleineberg, and Aart Kraay (2016): “Growth Still Is Good for the Poor.”
+European Economic Review 81(1): 68-85.
+     Durlauf, S., P. Johnson, and J. Temple. 2005. “Growth Econometrics.” In Handbook of
+Economic Growth, edited by Philippe Aghion and Stefen Durlauf. Amsterdam, Netherlands: North-
+Holland.
+     Easterly, W., Kremer, M., Pritchett, L., & Summers, L. H. (1993). Good policy or good luck?
+Country growth performance and temporary shocks. Journal of Monetary Economics, 32(3), 459-
+483.
+      Easterly, William and Ross Levine (1997): “Africa’s growth tragedy: policies and ethnic
+divisions.” Quarterly Journal of Economics 112(4): 1203-1250.
+     Easterly, William and Ross Levine (2001): “It’s not factor accumulation: Stylized facts and
+growth models.” World Bank Economic Review 15(2): 177-219.
+      Feenstra, Robert C., Robert Inklaar, and Marcel P. Timmer (2015): “The next generation of
+the Penn World Table.” American Economic Review 105 (10): 3150-3182.
+     Feng, Guohua, Jiti Gao, and Bin Peng (2022): “An integrated panel data approach to modelling
+economic growth.” Journal of Econometrics 228(2): 379-397.
+     Fernández, Carmen, Eduardo Ley, and Mark F. J. Steel (2001): “Model uncertainty in cross-
+country growth regressions.” Journal of Applied Econometrics 16(5): 563-576.
+      Geiger, Michael, Jan Trenczek and Konstantin M. Wacker (2019): Understanding Economic
+Growth in Ghana in Comparative Perspective. World Bank Policy Research Working Paper No.
+8699.
+    Glaeser, E., La Porta, R., Lopez-de-Silanes, F., and Shleifer, A. (2004): “Do Institutions Cause
+Growth?” Journal of Economic Growth 9 (3): 271–303
+      Gopinath, Gita, Emine Boz, Camila Casas, Federico J. Díez, Pierre-Olivier Gourinchas, and
+Mikkel Plagborg-Møller (2020): “Dominant Currency Paradigm.” American Economic Review 110
+(3): 677-719.
+      Grömping, Ulrike (2007): “Estimators of relative importance in linear regression based on
+variance decomposition.” American Statistician 61: 139-147
+      Gründler, Klaus and Philipp Scheuermeyer (2018): “Growth effects of inequality and
+redistribution: What are the channels?” Journal of Macroeconomics 55: 293-313
+     Haberl, H., Wiedenhofer, D., Virág, D., Kalt, G., Plank, B., Brockway, P., ... and Creutzig, F.
+(2020): “A systematic review of the evidence on decoupling of GDP, resource use and GHG
+emissions, part II: synthesizing the insights.” Environmental Research Letters, 15(6): 065003.
+      Haile, Fiseha and Lars Christian Moller (2018): Explaining the WAEMU Growth Spurt: The
+Role of Financial Deepening and Macro Policy. World Bank Policy Research Working Paper No.
+8675.
+     Hanushek, E., and L. Woessmann (2012): “Schooling, Educational Achievement, and the Latin
+
+
+
+
+                                               -30-
+American Growth Puzzle.” Journal of Development Economics 99: 497–512.
+    Hanushek, E., and L. Woessmann (2015): The Knowledge Capital of Nations. Cambridge, MA:
+MIT Press.
+     Henry, Peter Blair and Michael Woodford (2008): “Comments and Discussion on: The Real
+Exchange Rate and Economic Growth.” Brookings Papers on Economic Activity (Fall 2008): 413-
+439.
+      Herzer, Dirk and Sebastian Vollmer (2011): “Inequality and growth: evidence from panel
+cointegration.” Journal of Economic Inequality 10(4): 489-503.
+      Hnatkovska, V., and N. Loayza. (2005): “Volatility and Growth.” In: Managing Economic
+Volatility and Crises: A Practitioner’s Guide, edited by J. Aizenman and B. Pinto, 65–100.
+Cambridge, UK: Cambridge University Press.
+     Hodrick, R.J. and E. Prescott (1981): Post-War U.S. Business Cycles: An Empirical
+Investigation. Discussion Papers 451, Northwestern University.
+     Hulten, C. R. (2010): “Growth Accounting.” In Handbook of the Economics of Innovation,
+volume 2, edited by B. H. Hall and N. Rosenberg, 987–1031. North-Holland.
+     Imbs, Jean, and Romain Wacziarg (2003): “Stages of Diversification.” American Economic
+Review 93(1): 63-86
+     Inklaar, Robert, Ryan Marapin, Jop Woltjer, and Marcel Timmer (2022): Inconsistencies in
+comparing relative prices over time: patterns and facts. In: Chotikapanich, D., Rambaldi, A. &
+Rohde, N. (eds.): Advances in Economic Measurement: A Volume in Honour of D. S. Prasada Rao.
+Singapore: Palgrave MacMillan, p. 633–663.
+    Islam, N. (1995): “Growth Empirics: A Panel Data Approach.” Quarterly Journal of
+Economics 110(4): 1127–70.
+     Johnson, S., Larson, W., Papageorgiou, C., & Subramanian, A. (2013): “Is newer better? Penn
+World Table Revisions and their impact on growth estimates.” Journal of Monetary Economics,
+60(2), 255-274.
+     Karakaplan, Mustafa U., Levent Kutlu, and Mike G. Tsionas (2020): “A solution to log of
+dependent variables with negative observations.” Journal of Productivity Analysis 54: 107-119.
+     Keele, Luke and Nathan J. Kelly (2005): “Dynamic Models for Dynamic Theories: The Ins
+and Outs of Lagged Dependent Variables.” Political Analysis 14(2): 186-205.
+     Kiviet, Jan F. (1995): “On bias, inconsistency, and efficiency of various estimators in dynamic
+panel data models.” Journal of Econometrics 68(1): 53-78.
+    Kraay, Aart (2015): Weak Instruments in Growth Regressions : Implications for Recent Cross-
+Country Evidence on Inequality and Growth. World Bank Policy Research Working Paper 7494.
+      Krugman, Paul and Lance Taylor (1978): “Contractionary effects of devaluation.” Journal of
+International Economics 8(3): 445-456.
+    Laeven, Luc and Fabian Valencia (2020): “Systemic Banking Crises Database II.” IMF
+Economic Review 68: 307-361.
+
+
+
+
+                                               -31-
+     Levine, R., N. Loayza, and T. Beck (2000): “Financial intermediation and growth: causality
+and causes.” Journal of Monetary Economics, 46(1): 31-77.
+     Levine, Ross (2005): “Finance and Growth: Theory and Evidence” in: Philippe Aghion and
+Steven N. Durlauf (eds.) Handbook of Economic Growth, Volume 1A, Elsevier.
+     Levine, Ross and David Renelt (1992): “A Sensitivity Analysis of Cross-Country Growth
+Regressions.” American Economic Review 82(4): 942-963.
+     Levy-Yeyati, Eduardo, Federico Sturzenegger, and Pablo Alfredo Gluzmann (2013): “Fear of
+appreciation.” Journal of Development Economics 101: 233-247.
+     Loayza, Norman, Pablo Fajnzylber, and César Calderón (2005): Economic Growth in Latin
+America and the Caribbean: Stylized Facts, Explanations, and Forecasts. Washington, DC: World
+Bank Group.
+     Maloney, William F. and Felipe Valencia Caicedo (2022): “Engineering Growth.” Journal of
+the European Economic Association 20(4): 1554–1594.
+     Mankiw, N. G., Romer, D., and Weil, D. N. (1992). “A contribution to the empirics of
+economic              growth.” Quarterly Journal of Economics, 107(2), 407-437.
+     McMillan, M., D. Rodrik, and I. Verduzco-Gallo (2014): “Globalization, structural change,
+and productivity growth, with an Update on Africa.” World Development 63: 11-32.
+      Moller, L.C. and K.M. Wacker (2017): “Explaining Ethiopia’s Growth Acceleration – The Role
+of Infrastructure and Macroeconomic Policy.” World Development 96: 198-215
+     Muris, Chris and Konstantin M. Wacker (2022): Estimating Interaction Effects with Panel Data.
+arXiv 2211.01557 (revise & resubmit: Journal of Applied Econometrics).
+     Ortiz-Bobea, Ariel, Toby R. Ault, Carlos M. Carrillo, Robert G. Chambers, and David B.
+Lobell (2021): “Anthropogenic climate change has slowed global agricultural productivity growth.”
+Nature Climate Change 11: 306–312.
+      Papageorgiou, Chris, Nikola Spatafora, and Ke Wang (2015): Diversification, Growth, and
+Volatility in Asia. World Bank Policy Research Working Paper 7380.
+     Patel, Dev, Justin Sandefur and Arvind Subramanian (2021): “The new era of unconditional
+convergence.” Journal of Development Economics 152: 102687
+     Pritchett, L. (2001): “Where Has All the Education Gone?” World Bank Economic Review
+15(3): 367–391.
+    Pritchett, Lant and Larry Summers (2015): Asiaphoria Meets Regression to the Mean. NBER
+Working Paper 20573.
+     Ramey, G., and V. A. Ramey (1995): “Cross-Country Evidence on the Link between Volatility
+and Growth.” American Economic Review 85 (5): 1138–51.
+     Rapetti, Martin (2019): “The Real Exchange Rate and Economic Growth: A Survey.” Journal
+of Globalization and Development 11(2): 20190024.
+    Rodrik, Dani (2008): “The Real Exchange Rate and Economic Growth.” Brookings Papers on
+Economic Activity (Fall 2008): 365-412.
+
+
+
+
+                                              -32-
+     Roodman, David (2009): “A Note on the Theme of Too Many Instruments.” Oxford Bulletin
+of Economics and Statistics 71(1): 135-158.
+     Sachs, J. D. and Warner, A. M. (1997). “Sources of Slow Growth in African Economies.”
+Journal of African Economies 6(3) 335–76.
+     Sala-i-Martin, X. X. (1997). “I just ran two million regressions.” American Economic Review,
+87(2), 178-183.
+     Scholl, Nathalie and Stephan Klasen (2019): “Re-estimating the relationship between
+inequality and growth.” Oxford Economic Papers 71(4): 824-847.
+     Solow, Robert M. (1956): “A contribution to the theory of economic growth.” Quarterly
+Journal of Economics 70(1): 65–94.
+      Solt, Frederick (2019): The Standardized World Income Inequality Database, Versions 8-9.
+https://doi.org/10.7910/DVN/LM4OWF, Harvard Dataverse, V6
+     Swan, Trevor W. (1956): “Economic growth and capital accumulation.” Economic Record
+32(2): 334–361.
+     Svirydzenka, Katsiaryna (2016): Introducing a New Broad-based Index of Financial
+Development. IMF Working Paper 16/5.
+     Timmer, M.P. and G.J. De Vries (2009): “Structural change and growth accelerations in Asia
+and Latin America: A new sectoral data set.” Cliometrica 3(2): : 165-190.
+      Välilä, Timo (2020): “Infrastructure and growth: A survey of macro-econometric research.”
+Structural Change and Economic Dynamics 53: 39-49.
+      Voigt, Stefan (2013): “How (Not) to measure institutions.” Journal of Institutional Economics
+9(1): 1 – 26.
+     Wollburg, Philip, Stephane Hallegatte, and Daniel Gerszon Mahler (2023): The Climate
+Implications of Ending Global Poverty. World Bank Policy Research Working Paper 10318.
+     World Bank (2019): CEM2.0 Country Scan Guidelines. World Bank Group.
+
+
+
+
+                                              -33-
+
