@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}Recap}{2}{section.1}%
+\contentsline {section}{\numberline {2}Trends and cycles}{2}{section.2}%
+\contentsline {section}{\numberline {3}Deterministic trend}{2}{section.3}%
+\contentsline {section}{\numberline {4}Linear filters}{3}{section.4}%
+\contentsline {section}{\numberline {5}The Hodrick-Prescott (HP) filter}{4}{section.5}%
+\contentsline {section}{\numberline {6}Beveridge-Nelson (BN) decomposition}{5}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Evaluating the BN filter}{5}{subsection.6.1}%
+\contentsline {section}{\numberline {7}Hamilton (2018) filter}{6}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Intuition}{6}{subsection.7.1}%
+\contentsline {section}{\numberline {8}Spurious cycles}{7}{section.8}%

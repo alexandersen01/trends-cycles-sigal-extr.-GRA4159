@@ -1,0 +1,212 @@
+\documentclass[10pt]{article}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta, positioning}
+
+\usepackage{parskip}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb, graphicx, multicol, array}
+\usepackage{enumitem}
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{href-ul}
+ 
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+ 
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+
+\begin{document}
+ 
+\title{Trends and Cycles II}
+\author{Jakob Sverre Alexandersen\\
+GRA4159 Trends, Cycles \& Signals Extraction\\
+Lecture 7}
+\maketitle
+
+\tableofcontents
+\newpage
+\section{Recap}
+\textbf{What we now know}
+\begin{itemize}
+    \item For estimation, we prefer working with stationary data and models 
+    \item Most economic data is non-stationary 
+    \item We can remove the non-stationary part using different approaches 
+    \begin{itemize}
+        \item Differencing the data, i.e., looking at the (first) derivatives / growth 
+        \begin{itemize}
+            \item But then miss the level which might end up important 
+        \end{itemize}
+        \item Subtract trend component, but we aware of spurious cycles 
+        \begin{itemize}
+            \item Deterministic trend is easy, but is it realistic?
+            \item Stochastic trends 
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+But often in economics, we are interested in the trend/cycle per se. Not because of the statistical issues involved with non-stationary data, but because theory is written in terms of trends or cycles. 
+\section{Trends and cycles}
+In the following we will assume that (the log of) a time series can be decomposed into two components, a trend $(g_t) $ and a cycle $(c_t) $:
+\begin{gather*}
+    y_t = g_t + c_t 
+\end{gather*}
+
+To obtain estimates of $(g_t) $ and $(c_t) $, we will consider several univariate detrending methods. 
+\section{Deterministic trend}
+The traditional method used to estimate business cycles was to define a smooth (natural) growth path for the economy, which was only perturbed by transitory cyclical fluctuations
+\begin{gather*}
+    y_t = g_t + c_t \\
+    \hat{g}_t = \hat{\alpha}_0 + \hat{\alpha}_1t + \hat{\alpha}_2t^2 + \dots\\
+    \hat{c}_t = y_t - \hat{g}_t
+\end{gather*}
+The assumption of a linear trend (LT) implies $|\alpha_1| > 0 \text{, and }\alpha_2 = 0 $.
+
+For a quadratic trend (QT), one assumes $|\alpha_1| > 0 \text{, and }\alpha_2 > 0 $.
+\newpage 
+\section{Linear filters}
+A filter is a function that transforms a time series into another time series. If we let $g_t $ represent a moving average of observed $y_t $, we can extract the trend component $(g_t) $ and the cyclical component $(c_t) $. That is, let $g_t = G(L)y_t $, or: 
+\begin{gather}
+    g_t = \sum_{j = -m}^{n}g_jy_{t - j}
+\end{gather}
+where $m, n \in \mathbb{Z}^+$ and $g_j $ are the weights in the $G(L) $ polynomial: 
+\begin{gather}
+    G(L) = \sum_{j = -m}^{n} g_jL^j
+\end{gather}
+where $L $ is defined so that $L^jy_t = y_{t - j} $ for positive and negative values of $j $. We will mostly focus our attention to symmetric moving averages, i.e., those for which weights are s.t. $g_j = g_{-j} $.
+
+Equations (1) and (2) define the trend component. The cyclical component is simply the difference between the observed value of $y $ and this component, i.e.:
+\begin{gather*}
+    c_t = [1 - G(L)]y_t\equiv C(L)y_t 
+\end{gather*}
+We call $C(L) \text{ and } G(L) $ linear filters. Often the weights are chosen to add up to one, i.e., $\sum_{j = -m}^{n}c_j = 1 $, so that the level of the series is maintained. 
+
+The 5-point moving average filter displayed in lec 1 is an example of a filter that was used to smooth the series. The weight was 1/5, which was applied to a moving window of five observations. That way we created a cyclical component by filtering the noise, i.e.,b
+\begin{gather*}
+    c_t = 1/5 \sum_{j = -2}^{2}\epsilon_{t - j} = 1/5(\epsilon_{t - 2} + \epsilon_{t - 1} + \epsilon_{t} + \epsilon_{t + 1} + \epsilon_{t + 2})
+\end{gather*}
+\textbf{Note how applying this type of filters to the data changes its properties!}
+
+One implication: two series that are totally unrelated can become highly related after applying a trend/cycle decomposition
+\newpage 
+\section{The Hodrick-Prescott (HP) filter}
+A pupular way to extract business cycles. The filter extracts a stochastic trend, $(g_t) $, which for a given value of $\lambda $, moves smoothly over time and is uncorrelated with the cycle. The `trend' can be obtained as the solution to the problem: 
+\begin{gather*}
+    \min_{[g_t]}\sum_{t = 1}^{T}\left[(y_t - g_t)^2 + \lambda[(g_{t + 1} - g_t) - (g_t - g_{t - 1})]^2\right]
+\end{gather*}
+$\lambda $ is the smoothing parameter. It ``penalizes'' the acceleration in the growth component. 
+\begin{itemize}
+    \item If $\lambda $ approaches infinity, the lowest minimum is achieved when the variability in the trend is zero, and the trend is perfectly log linear. 
+    \item A small value of $\lambda $ will allow more variation in the trend. If $\lambda = 0 $, there will be no cycle, as the trend will follow the observed series perfectly. 
+\end{itemize}
+\textbf{Warning!}
+
+The HP filter is often used in economics. Use it with care: 
+\begin{itemize}
+    \item HP filter produces series with spurious dynamic relations that have no basis in the underlying data-generating process. 
+    \item The end-of-sample problem: HP filter produces cyclical series that are close to the observed data at the beginning and at the end of the estimation period. 
+    \item How to set $\lambda $? And what does it basically imply. $\lambda = 1600 $ is often used for quarterly macro data, but when estimating $\lambda $ (which can be done) one often get very different values 
+    \item Read Hamilton on why it sucks: 
+
+    ``(a) The Hodrick-Prescott (HP) ﬁlter introduces spurious dynamic relations that have no basis in the underlying data-generating
+    process. (b) Filtered values at the end of the sample are very different from
+    those in the middle and are also characterized by spurious dynamics. (c)
+    A statistical formalization of the problem typically produces values for the
+    smoothing parameter vastly at odds with common practice. (d) There is a
+    better alternative. A regression of the variable at date $t$ on the four most
+    recent values as of date $t - h$ achieves all the objectives sought by users of
+    the HP ﬁlter with none of its drawbacks.''
+\end{itemize}
+\newpage 
+\section{Beveridge-Nelson (BN) decomposition}
+Definition: The implied trend for a non-stationary time series can be defined as the minimum MSE forecast of the long-run level of the series (minus any drift)
+
+An equivalent formulation is that BN trend is the present level of the series plus the infinite sum of the minimum MSE $h $-period ahead first difference forecasts. 
+
+Let $y_t $ be integrated of first order, so that its first differences, $\Delta y_t $, are stationary and can be accurately forecasted using a stationary, e.g., AR(1) model: 
+\begin{gather*}
+    (\Delta y_t - \alpha) = \phi(\Delta y_{t - 1} - \alpha) + \epsilon_t
+\end{gather*}
+The minimum squared error (MSE) $h $-period ahead forecast of the first difference AR is (tbc):
+\begin{gather}
+    \mathbb{E}[\Delta y_{t + h} - \alpha] = \phi^h(\Delta y_t - \alpha)
+\end{gather}
+As by definition, the BN trend is the present level of the series plus the infinite su of the minimum MSE $h $-period first difference forecasts, we have:
+\begin{gather}
+    g_t = y_t + \lim_{H\to\infty}\sum_{h = 1}^{H}\mathbb{E}[\Delta y_{t + h} - \alpha]
+\end{gather}
+Subsituting the expression for the $h $-period ahead forecast from equation (3) into the definition in (4), we get: 
+\begin{gather*}
+    g_t = y_t + \lim_{H\to\infty}\sum_{h = 1}^{H}\phi^h(\Delta y_t - \alpha)\\
+    = y_t + \frac{\phi}{1 - \phi}(\Delta y_t - \alpha)
+\end{gather*}
+The BN cycle can easily be derived from the result above using the definition: $y_t = g_t + c_t $. Thus: 
+\begin{gather*}
+    c_t = \frac{\phi}{1 - \phi}(\Delta y_t - \alpha)
+\end{gather*}
+\subsection{Evaluating the BN filter}
+\begin{itemize}
+    \item The advantage of the BN method is that it is an appropriate method to extract cycles when a series is difference-stationary and hence using a linear model may infer spurious cycles. 
+    \item It allows the series to contain a unit root that can be highly volatile 
+    \item One disadvantage is that it is rather time-consuming, as one has to choose between different ARMA models that may give quite different results. 
+    \item Cochrane (1988) pointed out that although different ARMA models may fit the short-run properties of the first differences of an observed series, the forecast functions from these models may differ substantially. Since the trend-cycle decomposition in the BN method relies on the forecast properties of the ARMA models, these models may give very different trend-cycle decompositions. 
+\end{itemize}
+\newpage 
+\section{Hamilton (2018) filter}
+Builds on similar idea as the BN decomposition, but perhaps even simpler. Builds on fixed horizon direct forecasting equation rather than iterative infinity approximation as in BN. 
+
+If $y_t $ is integrated of some order $d $, do the regression 
+\begin{gather*}
+    y_{t + h} = \alpha + \sum_{j = 1}^{P}\beta_jy_{t - j + 1}+ v_{t + h}
+\end{gather*}
+with $p > d $. Then, as shown in Hamilton (2018), the residuals $\hat{v}_{t + h} $ will be stationary and approximate will the cyclical component for a broad class of underlying processes
+
+Thus, $c_{t + g}\equiv \hat{v}_{t + h} = y_{t + h} - q_t $, from which we can easily obtain the trend as well. 
+\subsection{Intuition}
+Assume $y_t $ is $I(d = 1) $, s.t. $y_t = y_{t - 1} + u_t \text{, and } p = 1 \text{ and } h = 2 $ for simplicity, then the regression 
+\begin{gather*}
+    y_{t + 2} = \beta y_1 + v_{t + 2}
+\end{gather*}
+implies that $\hat{\beta} = 1 $ and $\hat{v}_{t + 2} = u_{t + 2} + u_{t + 1} $ because the forecast of an RW, process $h $ periods into the future
+\begin{itemize}
+    \item Is in expectation $\mathbb{E}[y_{t + h}| y_t] = y_t $. This gives $\hat{\beta} = 1 $ above 
+    \item But has errors $y_{t + h} - \mathbb{E}[y_{t + h}|y_t] = \sum_{j = 1}^{h}u_{t + j} $. In turn, this implies that $\hat{v}_{t + 2} = u_{t + 1} + u_{t + 2} $ above 
+\end{itemize}
+Clearly, since $u_t $ is Gaussian white noise and stationary, $v_{t + 2} $ is stationary as well. Put differently, the sum of stationary components is stationary. 
+
+Note, if the RW assumption is correct, simply computing $y_t - y_{t - h} = \Delta^hy_t = \left(1 - L^h\right)y_t $ would give the ``same'' as OLS regression 
+
+Key benefits (relative to e.g., HP filter)
+\begin{itemize}
+    \item As BN decomposition; very data driven
+    \item Less likely that any inferred correlation between two filtered variables are due to the filtering method per se. Rather, a property of the data. 
+    \item Relative to BN, potentially more control, because $h $ can be chosen by the researcher
+\end{itemize}
+
+Implementation: 
+\begin{itemize}
+    \item How to choose $h $: up to you. But, for macroeconomic data and business cycles, Hamilton recommends $h = 8 $ for quarterly data, i.e., 2-year horizon forecast
+    \item How to choose $p $: needs to be bigger than $d $ (which is unknown). Hamilton recommends $p = 4 $
+\end{itemize}
+\newpage 
+\section{Spurious cycles}
+Nelson and Kang (1981): If one detrend data that are generated by an RW using a smooth deterministic trend, one can infer spurious cycles in the data. The deterministic trend would over-estimate the persistence of the cycle, whereas the trend component would be under-estimated.
+
+Yule-Slutsky effect: A cycle could be spurious, simply because it is a function of the filters applied to extract the cycle from economic data. I.e., using a summation procedure to smooth a series in addition to differentiating to remove the long-run trend, would generate a spurious cyclical pattern. 
+
+Should check for robustness of results (alternative filters)
+\section{Summary}
+\begin{enumerate}
+    \item When studying economic data we are often interested in capturing the trend and cyclical properties of these data series 
+    \item You should know the intuition for and be able to apply: 
+    \begin{itemize}
+        \item Deterministic trend extraction methods 
+        \item Moving average filters 
+        \item HP method 
+        \item BN decomposition
+        \item Hamilton filter 
+    \end{itemize}
+    \item And also understand the strengths and weaknesses with each of these methods 
+    \item Remember, the relationship between variables can be very much influenced by different filtering methods 
+    \item It is also very easy to generate suprious cycles if one makes filtering assumptions that are at odds with the underlying data generating process. 
+\end{enumerate}
+\end{document}
