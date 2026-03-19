@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.4.13)  19 MAR 2026 11:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.1) (preloaded format=pdflatex 2025.4.13)  19 MAR 2026 14:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/jakobsverrealexandersen/Documents/trends-cycles-sigal-extr.-GRA4159/assignments/2/2.tex
-(/Users/jakobsverrealexandersen/Documents/trends-cycles-sigal-extr.-GRA4159/assignments/2/2.tex
+**/Users/jakobsverrealexandersen/Documents/trends-cycles-sigal-extr.-GRA4159/assignments/3/3.tex
+(/Users/jakobsverrealexandersen/Documents/trends-cycles-sigal-extr.-GRA4159/assignments/3/3.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/tex/latex/base/article.cls
@@ -844,8 +844,8 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 ))
 \@quotelevel=\count473
 \@quotereset=\count474
- (2.aux)
-\openout1 = `2.aux'.
+ (3.aux)
+\openout1 = `3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
 LaTeX Font Info:    ... okay on input line 22.
@@ -944,17 +944,17 @@ File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout3 = `2.bcf'.
+\openout3 = `3.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file '2.bbl' found.
- (2.bbl)
+Package biblatex Info: ... file '3.bbl' found.
+ (3.bbl)
 Package biblatex Info: Reference section=0 on input line 22.
 Package biblatex Info: Reference segment=0 on input line 22.
 Package hyperref Info: Link coloring OFF on input line 22.
- (2.out) (2.out)
+ (3.out) (3.out)
 \@outlinefile=\write5
-\openout5 = `2.out'.
+\openout5 = `3.out'.
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
  (/Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/tex/latex/amsfonts/umsa.fd
@@ -968,86 +968,82 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {/Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/data/fonts/map/pdftex/pdftex.map}]
-
-[2]
-
-[3]
-
-[4]
-
-[5]
-Overfull \hbox (4.78786pt too wide) in paragraph at lines 274--274
-[]\OT1/cmr/bx/n/14.4 Relationship Be-tween Growth Re-gres-sions and Growth Ac-count-
- []
+<2026-03-19-09-26-07.png, id=40, 1193.45876pt x 792.9625pt>
+File: 2026-03-19-09-26-07.png Graphic file (type png)
+<use 2026-03-19-09-26-07.png>
+Package pdftex.def Info: 2026-03-19-09-26-07.png  used on input line 79.
+(pdftex.def)             Requested size: 422.77664pt x 280.90472pt.
 
 
-
-[6]
-<2026-02-06-10-16-41.png, id=114, 1188.44pt x 485.815pt>
-File: 2026-02-06-10-16-41.png Graphic file (type png)
-<use 2026-02-06-10-16-41.png>
-Package pdftex.def Info: 2026-02-06-10-16-41.png  used on input line 287.
-(pdftex.def)             Requested size: 469.75502pt x 192.03195pt.
-<2026-02-06-10-19-10.png, id=116, 1188.44pt x 485.815pt>
-File: 2026-02-06-10-19-10.png Graphic file (type png)
-<use 2026-02-06-10-19-10.png>
-Package pdftex.def Info: 2026-02-06-10-19-10.png  used on input line 292.
-(pdftex.def)             Requested size: 469.75502pt x 192.03195pt.
+[2 <./2026-03-19-09-26-07.png>]
+<2026-03-19-09-26-17.png, id=50, 1193.45876pt x 792.9625pt>
+File: 2026-03-19-09-26-17.png Graphic file (type png)
+<use 2026-03-19-09-26-17.png>
+Package pdftex.def Info: 2026-03-19-09-26-17.png  used on input line 86.
+(pdftex.def)             Requested size: 422.77664pt x 280.90472pt.
 
 
-[7 <./2026-02-06-10-16-41.png> <./2026-02-06-10-19-10.png>]
-<2026-02-06-10-03-53.png, id=124, 1188.44pt x 485.815pt>
-File: 2026-02-06-10-03-53.png Graphic file (type png)
-<use 2026-02-06-10-03-53.png>
-Package pdftex.def Info: 2026-02-06-10-03-53.png  used on input line 298.
-(pdftex.def)             Requested size: 469.75502pt x 192.03195pt.
-<2026-02-06-10-40-45.png, id=125, 1188.44pt x 485.815pt>
-File: 2026-02-06-10-40-45.png Graphic file (type png)
-<use 2026-02-06-10-40-45.png>
-Package pdftex.def Info: 2026-02-06-10-40-45.png  used on input line 303.
-(pdftex.def)             Requested size: 469.75502pt x 192.03195pt.
+[3 <./2026-03-19-09-26-17.png>]
+<2026-03-19-10-28-38.png, id=57, 1394.20876pt x 491.8375pt>
+File: 2026-03-19-10-28-38.png Graphic file (type png)
+<use 2026-03-19-10-28-38.png>
+Package pdftex.def Info: 2026-03-19-10-28-38.png  used on input line 96.
+(pdftex.def)             Requested size: 469.75502pt x 165.71407pt.
 
 
-[8 <./2026-02-06-10-03-53.png> <./2026-02-06-10-40-45.png>]
-Overfull \hbox (58.76201pt too wide) in paragraph at lines 307--307
-[][]\OT1/cmr/m/n/10 Blanchard, O., & Gal^^S^^P, J. (2007). Real wage rigidi-ties and the new key-ne-sian model. |   [],
- []
+[4 <./2026-03-19-10-28-38.png>]
+<2026-03-19-11-35-38.png, id=64, 1194.4625pt x 491.8375pt>
+File: 2026-03-19-11-35-38.png Graphic file (type png)
+<use 2026-03-19-11-35-38.png>
+Package pdftex.def Info: 2026-03-19-11-35-38.png  used on input line 127.
+(pdftex.def)             Requested size: 469.75502pt x 193.42938pt.
 
 
-Overfull \hbox (34.65306pt too wide) in paragraph at lines 307--307
-\OT1/cmr/m/n/10 shocks or com-mon trends? |   [], |   [](1), e12690. []|   [][] 
- []
+[5 <./2026-03-19-11-35-38.png>]
+<2026-03-19-13-22-15.png, id=71, 966.61125pt x 972.63374pt>
+File: 2026-03-19-13-22-15.png Graphic file (type png)
+<use 2026-03-19-13-22-15.png>
+Package pdftex.def Info: 2026-03-19-13-22-15.png  used on input line 149.
+(pdftex.def)             Requested size: 422.77664pt x 425.40749pt.
 
 
-Overfull \hbox (1.95235pt too wide) in paragraph at lines 307--307
-[][]\OT1/cmr/m/n/10 Wacker, K. M., Beyer, R. C., & Moller, L. C. (2024, April). |   []
- []
+[6 <./2026-03-19-13-22-15.png>]
+
+[7]
+<2026-03-19-14-29-05.png, id=83, 1193.45876pt x 1017.8025pt>
+File: 2026-03-19-14-29-05.png Graphic file (type png)
+<use 2026-03-19-14-29-05.png>
+Package pdftex.def Info: 2026-03-19-14-29-05.png  used on input line 177.
+(pdftex.def)             Requested size: 469.75502pt x 400.60655pt.
 
 
+[8 <./2026-03-19-14-29-05.png>]
 
-[9] (2.aux)
+LaTeX Warning: Empty bibliography on input line 181.
+
+(3.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
-Package rerunfilecheck Info: File `2.out' has not changed.
-(rerunfilecheck)             Checksum: A0AD92D96B7BC9F896B2D2234F234C4B;2756.
-Package logreq Info: Writing requests to '2.run.xml'.
-\openout1 = `2.run.xml'.
+Package rerunfilecheck Info: File `3.out' has not changed.
+(rerunfilecheck)             Checksum: B5AB18BEAFE2B7BB228658517B1E1AC6;662.
+Package logreq Info: Writing requests to '3.run.xml'.
+\openout1 = `3.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 29931 strings out of 473530
- 584564 string characters out of 5697419
- 1479295 words of memory out of 5000000
- 52677 multiletter control sequences out of 15000+600000
- 566498 words of font info for 67 fonts, out of 8000000 for 9000
+ 29559 strings out of 473530
+ 576169 string characters out of 5697419
+ 1477605 words of memory out of 5000000
+ 52322 multiletter control sequences out of 15000+600000
+ 567348 words of font info for 70 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,9n,91p,1296b,5052s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi7.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on 2.pdf (9 pages, 297869 bytes).
+ 84i,7n,91p,1034b,5052s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/data/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmr17.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmti10.pfb></Users/jakobsverrealexandersen/Library/Application Support/MiKTeX/texmfs/install/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on 3.pdf (8 pages, 769422 bytes).
 PDF statistics:
- 197 PDF objects out of 1000 (max. 8388607)
- 40 named destinations out of 1000 (max. 500000)
- 129 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 138 PDF objects out of 1000 (max. 8388607)
+ 19 named destinations out of 1000 (max. 500000)
+ 83 words of extra memory for PDF output out of 10000 (max. 10000000)
 
